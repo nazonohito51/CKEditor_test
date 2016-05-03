@@ -2,8 +2,8 @@
 ip: "192.168.10.10"
 memory: 2048
 cpus: 1
-hostname: laravel-jp-reference-chapter8
-name: laravel-jp-reference-chapter8
+hostname: CKEditor-test
+name: CKEditor-test
 provider: virtualbox
 
 authorize: ~/.ssh/id_rsa.pub
@@ -12,12 +12,12 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: "C:/Users/LocalAccount/Documents/GitHub/laravel-jp-reference-chapter8"
-      to: "/home/vagrant/laravel-jp-reference-chapter8"
+    - map: "/Users/usr0600375/Work/nazonohito51/CKEditor_test"
+      to: "/home/vagrant/CKEditor_test"
 
 sites:
     - map: homestead.app
-      to: "/home/vagrant/laravel-jp-reference-chapter8/public"
+      to: "/home/vagrant/CKEditor_test/public"
 
 databases:
     - homestead
