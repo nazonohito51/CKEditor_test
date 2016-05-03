@@ -6,10 +6,10 @@ hostname: laravel-jp-reference-chapter8
 name: laravel-jp-reference-chapter8
 provider: virtualbox
 
-authorize: ~/.ssh/github_rsa.pub
+authorize: ~/.ssh/id_rsa.pub
 
 keys:
-    - ~/.ssh/github_rsa
+    - ~/.ssh/id_rsa
 
 folders:
     - map: "C:/Users/LocalAccount/Documents/GitHub/laravel-jp-reference-chapter8"
