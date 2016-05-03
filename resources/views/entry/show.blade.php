@@ -3,6 +3,10 @@
 @section('scripts')
     <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
     <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
+    <script>
+        CKEDITOR.disableAutoInline = true;
+        CKEDITOR.inline( 'editor1' );
+    </script>
 @stop
 
 @section('content')
@@ -16,7 +20,9 @@
             <div class="blog-post">
                 <h2 class="blog-post-title">{{{ $entry->title }}}</h2>
                 <p class="blog-post-meta">{{{ $entry->created_at }}}</p>
-                <p>{!! nl2br(e($entry->body)) !!}</p>
+                <div id="editor1" contenteditable="true">
+                    <p>{!! nl2br(e($entry->body)) !!}</p>
+                </div>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
             {{--  ここからは記事に対してのコメントフォームとなります --}}
