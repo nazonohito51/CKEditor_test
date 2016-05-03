@@ -44,6 +44,7 @@ class EntryController extends Controller
     public function show($id)
     {
         $attributes = [
+            'id' => $id,
             'entry' => $this->entry->getEntry($id),
             'comments' => $this->comment->getCommentsByEntry($id)
         ];
