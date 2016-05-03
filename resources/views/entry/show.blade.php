@@ -1,4 +1,10 @@
 @extends('layouts.entry')
+
+@section('scripts')
+    <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
+@stop
+
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログ</h1>
