@@ -1,0 +1,1 @@
+test CKEditor inline mode.
