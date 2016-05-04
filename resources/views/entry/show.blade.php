@@ -5,7 +5,10 @@
     <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
     <script>
         CKEDITOR.disableAutoInline = true;
-        CKEDITOR.inline( 'editor1' );
+        CKEDITOR.inline('editor1', {
+            extraPlugins: 'image2',
+            customConfig: '/js/ckeditor/config.js'
+        });
     </script>
 @stop
 
