@@ -5,8 +5,14 @@
     <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
     <script>
         CKEDITOR.disableAutoInline = true;
+        CKEDITOR.plugins.addExternal( 'uploadimage', '/js/ckeditor/plugins/uploadimage/', 'plugin.js' );
+        CKEDITOR.on( 'log', function( evt ) {
+            // Cancel default listener.
+            evt.cancel();
+            // Log event data.
+            console.log( evt.data.type, evt.data.errorCode, evt.data.additionalData );
+        } );
         CKEDITOR.inline('editor1', {
-            extraPlugins: 'image2',
             customConfig: '/js/ckeditor/config.js'
         });
     </script>
