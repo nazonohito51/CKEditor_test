@@ -30,16 +30,18 @@
                 <h2 class="blog-post-title">{{{ $entry->title }}}</h2>
                 <p class="blog-post-meta">{{{ $entry->created_at }}}</p>
                 <form method="POST" action="{{{ route('admin.entry.update', [$id]) }}}">
+                    {!! csrf_field() !!}
                     <div id="editor1" contenteditable="true">
                         <p>{!! nl2br(e($entry->body)) !!}</p>
                     </div>
                     <input type="button" class="form-control" id="test" name="test" value="test" onclick="window.alert(CKEDITOR.instances.editor1.getData())">
+                    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert($("form#entry input[name=\"_token\"]").get(0).value)'>
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
             {{--  ここからは記事に対してのコメントフォームとなります --}}
             <div class="row">
-                <form method="post" action="{{{ route('comment.store') }}}">
+                <form id="entry" method="post" action="{{{ route('comment.store') }}}">
                     {!! csrf_field() !!}
                     <input type="hidden" name="entry_id" value="{{{ $entry->id }}}">
                     <div class="form-group col-md-8 @if($errors->first('comment'))has-error @endif">
