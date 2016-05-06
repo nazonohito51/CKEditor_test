@@ -44,10 +44,16 @@ class EntryController extends Controller
      */
     public function show($id)
     {
+        $design_collection = [
+            'none' => '',
+            'kirin' => 'kirin/style.css',
+            'sky' => 'sky/style.css'
+        ];
         $attributes = [
             'id' => $id,
             'entry' => $this->entry->getEntry($id),
             'design' => Design::find(1),
+            'designs' => $design_collection,
             'comments' => $this->comment->getCommentsByEntry($id)
         ];
         return view('entry.show', $attributes);

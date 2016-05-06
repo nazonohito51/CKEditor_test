@@ -33,13 +33,16 @@
                 }
             })
         }
+        function changeDesign() {
+            design = $('#changeDesignSelect option:selected').val();
+            design_url = '/css/' + design;
+            $('#design_css').attr('href', design_url);
+        }
     </script>
 @stop
 
 @section('styles')
-    @if (empty($design->css) === false)
-        <link href="/css/{{{ $design->css }}}" rel="stylesheet">
-    @endif
+    <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -61,6 +64,11 @@
                     </div>
                     <input type="button" class="form-control" id="postEntryButton" name="test" value="保存する" onclick="postEntry({{{ $entry->id }}}, CKEDITOR.instances.editor1.getData())">
                     <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert(CKEDITOR.instances.editor1.getData())'>
+                    <select id="changeDesignSelect" name="design" onchange="changeDesign()">
+                        @foreach($designs as $key => $value)
+                            <option value="{{{ $value }}}">{{{ $key }}}</option>
+                        @endforeach
+                    </select>
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
