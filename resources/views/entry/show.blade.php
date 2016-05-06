@@ -42,7 +42,7 @@
         <p class="lead blog-description">Laravelリファレンス / サンプルアプリケーション</p>
     </div>
     <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
             {{--  ここからはブログ記事の表示です --}}
             <div class="blog-post">
                 <h2 class="blog-post-title">{{{ $entry->title }}}</h2>
@@ -96,6 +96,5 @@
             </div>
             {{--  ここまでが記事に対してのコメントです --}}
         </div>
-        @include('elements.entry.sidebar')
     </div>
 @stop
