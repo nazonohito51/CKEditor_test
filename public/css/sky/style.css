@@ -1,0 +1,536 @@
+@charset "Shift_JIS";
+@media screen{
+
+/* ********************************************** */
+ /* カスタマイズ項目 */
+
+	/* 横幅 */
+	div#PAGETOP
+		{
+		width: 90%;
+		max-width: 1000px;
+		}
+
+	/* ヘッダー */
+	div#HEADER
+		{
+		background: #003 url(/image/sky/sky_t.gif) no-repeat right bottom;
+		}
+
+	/* メニュー */
+	div#MENU
+		{
+		background: #003 url(/image/sky/sky_b.gif) no-repeat right top;
+		}
+
+	/* 見出し */
+	div#KIZI h2
+		{
+		background: #111 url(/image/sky/sky_m.gif) no-repeat right bottom;
+		}
+
+/* ********************************************** */
+/* 全体 */
+
+	html
+		{
+		margin: 0;
+		padding: 0;
+		}
+	body
+		{
+		margin: 0;
+		padding: 2em 0;
+		background-color: #222;
+		color: #99c;
+		font: medium/1.4 Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "ＭＳ Ｐゴシック", Sans-serif;
+		}
+
+/* ********************************************** */
+/* 見出し */
+
+	h1, h2, h3, h4, h5, h6
+		{
+		margin: 1em 0 0.4em;
+		font-weight: bold;
+		}
+	h1
+		{
+		margin: 0;
+		padding: 0 10px;
+		border-top: 1px solid #333;
+		border-left: 1px solid #333;
+		border-right: 1px solid #333;
+		font-size: medium;
+		line-height: 2em;
+		}
+	h2
+		{
+		font-size: x-large
+		}
+	h3
+		{
+		border-bottom: 1px dotted #336;
+		color: #69c;
+		font-size: large;
+		}
+	h4
+		{
+		margin-left: 2em;
+		border-bottom: 1px dotted #336;
+		color: #369;
+		font-size: large;
+		}
+	h5
+		{
+		margin-left: 4em;
+		border-bottom: 1px dotted #336;
+		color: #669;
+		font-size: medium;
+		}
+	h6
+		{
+		margin-left: 6em;
+		border-bottom: 1px dotted #336;
+		text-align: right;
+		color: #669;
+		font-size: medium;
+		}
+
+/* ********************************************** */
+/* ブロック要素 */
+
+	p, ol, ul, dl, address, blockquote, pre, form, table, hr
+		{
+		margin: 0.8em 0;
+		padding: 0;
+		}
+
+	/* リスト */
+	li
+		{
+		list-style-position: outside;
+		margin-left: 2em;
+		}
+	ol li
+		{
+		list-style-type: decimal;
+		}
+	li ol li
+		{
+		list-style-type: lower-roman;
+		}
+	ul li
+		{
+		list-style-type: square;
+		}
+	li ul li
+		{
+		list-style-type: disc;
+		}
+	dt
+		{
+		padding-left: 5px;
+		border-left: 5px solid #336;
+		}
+	dd
+		{
+		margin: 0.2em 0 0.2em 2em;
+		padding: 5px;
+		border-left: 2px solid #336;
+		border-bottom: 1px dotted #336;
+		}
+	li ol, dd ol, li ul, dd ul, li dl, dd dl
+		{
+		margin: 0;
+		}
+
+	/* アドレス */
+	address
+		{
+		padding: 12px 5px 5px;
+		border-left: 2px solid #336;
+		border-bottom: 1px dotted #336;
+		background: url(/image/sky/address.gif) no-repeat 5px 0;
+		font-style: normal;
+		}
+	li address, dd address
+		{
+		display: inline;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		}
+
+	/* 引用 */
+	blockquote
+		{
+		padding: 1.2em 2em;
+		border-left: 2px solid #336;
+		border-bottom: 1px dotted #336;
+		}
+		blockquote:before
+			{
+			content: "引用";
+			color: #669;
+			font-weight: bold;
+			font-size: x-large;
+			}
+
+	/* 整形済みテキスト */
+	pre
+		{
+		overflow: auto;
+		width: 85%;
+		padding: 1em;
+		border: 1px dotted #336;
+		background-color: #114;
+		}
+
+	/* 罫線 */
+	hr,
+	div#PAGETOP div.text hr
+		{
+		display: block;
+		border: 1px solid #336;
+		background-color: #336;
+		color: #336;
+		}
+
+/* ********************************************** */
+/* インライン要素 */
+
+	/* アンカー */	
+	a
+		{
+		text-decoration: underline;
+		}
+		a:link
+			{
+			color: #693;
+			}
+		a:visited
+			{
+			color: #66c;
+			}
+		a:hover,
+		a:active,
+		a:focus
+			{
+			color: #360;
+			}
+
+	/* 改行 */
+	br
+		{
+		letter-spacing: normal;
+		}
+
+	/* 強調 */
+	em
+		{
+		color: #963;
+		font-style: normal;
+		}
+	strong
+		{
+		border-bottom: 2px solid #663;
+		color: #963;
+		font-weight: bold;
+		}
+
+	/* 追加・削除 */
+	ins
+		{
+		border-bottom: 2px dotted #336;
+		text-decoration: none;
+		color: #ccf;
+		}
+	del
+		{
+		text-decoration: line-through;
+		color: #669;
+		}
+
+	/* 引用 */
+	q
+		{
+		border-bottom: 1px dotted #336;
+		}
+
+	/* 参照元 */
+	cite
+		{
+		border-bottom: 1px dotted #336;
+		font-style: normal;
+		}
+
+	/* 画像 */
+	img
+		{
+		border: 0;
+		}
+	a img
+		{
+		border-width: 2px;
+		border-style: solid;
+		}
+
+	/* 物理要素 */
+	b
+		{
+		font-weight: bold;
+		}
+	i
+		{
+		font-style: italic;
+		}
+	big
+		{
+		font-size: larger;
+		}
+	small
+		{
+		font-size: smaller;
+		}
+	tt
+		{
+		font-family: monospace;
+		}
+
+	/* その他 */
+	code
+		{
+		margin: 0 5px;
+		border-bottom: 1px dotted #336;
+		color: #669;
+		}
+	samp
+		{
+		margin: 0 5px;
+		}
+	kbd
+		{
+		margin: 0 5px;
+		padding: 0 5px;
+		border-top: 1px solid #336;
+		border-left: 1px solid #336;
+		border-right: 2px solid #225;
+		border-bottom: 2px solid #225;
+		}
+	var
+		{
+		font-style: italic;
+		}
+	abbr, acronym
+		{
+		cursor: help;
+		}
+
+/* ********************************************** */
+/* フォーム */
+
+	fieldset
+		{
+		margin: 0;
+		padding: 0 1em;
+		border: 1px dotted #336;
+		}
+	legend
+		{
+		color: #99c;
+		}
+
+	/* テキストボックス */
+	input
+		{
+		margin: 0.2em 0;
+		}
+	input[type="text"]
+		{
+		border: 1px dotted #336;
+		background-color: #114;
+		color: #99c;
+		}
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	input[type="image"]
+		{
+		cursor: pointer;
+		}
+	textarea
+		{
+		margin: 0.2em 0;
+		border: 1px dotted #336;
+		background-color: #114;
+		color: #99c;
+		}
+	select
+		{
+		margin: 0.2em 0;
+		background-color: #003;
+		color: #99c;
+		}
+
+	/* ボタン */
+	button
+		{
+		cursor: pointer;
+		}
+
+/* ********************************************** */
+/* テーブル */
+
+	table
+		{
+		border-collapse: collapse;
+		border: 2px dotted #336;
+		}
+	caption
+		{
+		text-align: center;
+		}
+	th
+		{
+		padding: 5px;
+		border: 1px solid #336;
+		background-color: #225;
+		font-weight: normal;
+		}
+	td
+		{
+		padding: 5px;
+		border: 1px solid #336;
+		background-color: #114;
+		}
+
+/* ********************************************** */
+/* レイアウト */
+
+	div#PAGETOP
+		{
+		margin: 0 auto;
+		}
+	div#PAGETOP hr
+		{
+		display: none;
+		}
+
+	div#HEADER
+		{
+		width: 400px;
+		margin-left: auto;
+		}
+	ul#PAN
+		{
+		display: none;
+		}
+
+	div#MENU
+		{
+		float: right;
+		width: 8em;
+		}
+	div#MENU h2
+		{
+		display: none;
+		}
+	div#MENU ul
+		{
+		margin: 0;
+		padding: 10px;
+		border-right: 1px solid #333;
+		border-bottom: 1px solid #333;
+		}
+	div#MENU ul li
+		{
+		list-style-type: none;
+		margin: 0;
+		line-height: 2em;
+		}
+	div#MENU a:link,
+	div#MENU a:visited
+		{
+		color: #99c;
+		}
+	div#MENU a:hover,
+	div#MENU a:active,
+	div#MENU a:focus
+		{
+		color: #ccf;
+		}
+	div#MENU ul li.menu-on a:link,
+	div#MENU ul li.menu-on a:visited,
+	div#MENU ul li.menu-on a:hover,
+	div#MENU ul li.menu-on a:active,
+	div#MENU ul li.menu-on a:focus
+		{
+		color: #66c;
+		}
+
+	div#KIZI
+		{
+		margin-right: 8em;
+		padding: 5px 5px 0;
+		border-top: 1px solid #333;
+		border-left: 1px solid #333;
+		border-right: 1px solid #333;
+		background-color: #111;
+		}
+	div#KIZI h2
+		{
+		margin: 0;
+		padding: 0 5%;
+		}
+	div.text
+		{
+		padding: 1em 5%;
+		border-top: 5px solid #111;
+		border-bottom: 5px solid #111;
+		background-color: #003
+		}
+	ul.modori
+		{
+		margin: 0;
+		}
+	ul.modori li
+		{
+		list-style-type: none;
+		margin: 0;
+		text-align: right;
+		}
+
+	div#FOOTER
+		{
+		clear: both;
+		margin-right: 8em;
+		padding: 0 5px 5px;
+		border-left: 1px solid #333;
+		border-right: 1px solid #333;
+		border-bottom: 1px solid #333;
+		background-color: #111;
+		text-align: center;
+		}
+	div#FOOTER h2
+		{
+		display: inline;
+		margin: 0 5px;
+		font-size: medium;
+		}
+	div#FOOTER ul
+		{
+		display: inline;
+		margin: 0;
+		}
+	div#FOOTER li
+		{
+		display: inline;
+		list-style-type: none;
+		margin: 0 5px;
+		}
+
+}

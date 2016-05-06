@@ -1,0 +1,526 @@
+@charset "Shift_JIS";
+@media screen{
+
+/* ********************************************** */
+ /* カスタマイズ項目 */
+ 
+	/* 横幅 */
+	div.text
+		{
+		width: 80%;
+		max-width: 1000px;
+		}
+
+	/* ヘッダー画像 */
+	div#HEADER
+		{
+		background-image: url(/image/twig/branch.gif);
+		}
+
+	/* 見出し画像 */
+	div#KIZI h2
+		{
+		background-image: url(/image/twig/twig.gif);
+		line-height: 86px;
+		}
+
+/* ********************************************** */
+/* 全体 */
+
+	html
+		{
+		margin: 0;
+		padding: 0;
+		background-color: #333;
+		}
+	body
+		{
+		margin: 0;
+		padding: 0;
+		background-color: #fcfcfc;
+		color: #333;
+		font: medium/1.4 Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "ＭＳ Ｐゴシック", Sans-serif;
+		}
+
+/* ********************************************** */
+/* 見出し */
+
+	h1, h2, h3, h4, h5, h6
+		{
+		margin: 1em 0 0.4em;
+		font-weight: normal;
+		}
+	h1
+		{
+		display: inline;
+		margin: 0 1em 0 0;
+		color: #966;
+		font-size: x-large;
+		}
+	h2
+		{
+		font-size: x-large;
+		}
+	h3
+		{
+		color: #933;
+		font-size: large;
+		}
+	h4
+		{
+		color: #633;
+		font-size: large;
+		}
+	h5
+		{
+		color: #633;
+		font-size: medium;
+		}
+	h6
+		{
+		font-size: medium;
+		}
+
+/* ********************************************** */
+/* ブロック要素 */
+
+	p, ol, ul, dl, address, blockquote, pre, form, table, hr
+		{
+		margin: 0.8em 0;
+		padding: 0;
+		}
+
+	/* リスト */
+	li
+		{
+		list-style-position: outside;
+		margin-left: 2em;
+		}
+	ol li
+		{
+		list-style-type: decimal;
+		}
+	li ol li
+		{
+		list-style-type: lower-roman;
+		}
+	ul li
+		{
+		list-style-type: disc;
+		}
+	li ul li
+		{
+		list-style-type: circle;
+		}
+	dd
+		{
+		margin: 0.2em 0 0.2em 1em;
+		padding: 5px;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		}
+	li ol, dd ol, li ul, dd ul, li dl, dd dl
+		{
+		margin: 0;
+		}
+
+	/* アドレス */
+	address
+		{
+		padding: 12px 5px 5px;
+		background: url(/image/twig/address.gif) no-repeat 5px 5px;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		font-style: normal;
+		}
+	li address, dd address
+		{
+		display: inline;
+		margin: 0;
+		padding: 0 59px 0 0;
+		border: 0;
+		background-position: right center;
+		}
+
+	/* 引用 */
+	blockquote
+		{
+		padding: 1.2em 2em;
+		border-top: 1px dotted #ccc;
+		border-left: 1px dotted #ccc;
+		border-right: 2px dotted #ddd;
+		border-bottom: 2px dotted #ddd;
+		}
+		blockquote:before
+			{
+			content: "引用";
+			color: #999;
+			font-size: x-large;
+			}
+
+	/* 整形済みテキスト */
+	pre
+		{
+		overflow: auto;
+		width: 85%;
+		padding: 1em;
+		background-color: #eee;
+		}
+
+	/* 罫線 */
+	hr,
+	div#PAGETOP div.text hr
+		{
+		display: block;
+		border: 1px solid #ccc;
+		background-color: #ccc;
+		color: #ccc;
+		}
+
+/* ********************************************** */
+/* インライン要素 */
+
+	/* アンカー */	
+	a
+		{
+		text-decoration: underline;
+		}
+		a:link
+			{
+			color: #369;
+			}
+		a:visited
+			{
+			color: #636;
+			}
+		a:hover,
+		a:active,
+		a:focus
+			{
+			color: #933;
+			}
+
+	/* 改行 */
+	br
+		{
+		letter-spacing: normal;
+		}
+
+	/* 強調 */
+	em
+		{
+		color: #663;
+		font-style: normal;
+		}
+	strong
+		{
+		border-bottom: 1px dotted #966;
+		color: #663;
+		font-weight: bold;
+		}
+
+	/* 追加・削除 */
+	ins
+		{
+		border-bottom: 1px dotted #666;
+		background-color: #eee;
+		text-decoration: none;
+		}
+	del
+		{
+		text-decoration: line-through;
+		color: #666;
+		}
+
+	/* 引用 */
+	q
+		{
+		border-top: 1px dotted #ccc;
+		border-left: 1px dotted #ccc;
+		border-right: 2px dotted #ddd;
+		border-bottom: 2px dotted #ddd;
+		}
+
+	/* 参照元 */
+	cite
+		{
+		border-bottom: 2px dotted #ccc;
+		font-style: normal;
+		}
+
+	/* 画像 */
+	img
+		{
+		border: 0;
+		}
+	a img
+		{
+		border-width: 2px;
+		border-style: solid;
+		}
+
+	/* 物理要素 */
+	b
+		{
+		font-weight: bold;
+		}
+	i
+		{
+		font-style: italic;
+		}
+	big
+		{
+		font-size: larger;
+		}
+	small
+		{
+		font-size: smaller;
+		}
+	tt
+		{
+		font-family: monospace;
+		}
+
+	/* その他 */
+	code
+		{
+		margin: 0 5px;
+		color: #666;
+		}
+	samp
+		{
+		margin: 0 5px;
+		}
+	kbd
+		{
+		margin: 0 5px;
+		padding: 0 5px;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-right: 2px solid #ddd;
+		border-bottom: 2px solid #ddd;
+		}
+	var
+		{
+		font-style: italic;
+		}
+	abbr, acronym
+		{
+		cursor: help;
+		}
+
+/* ********************************************** */
+/* フォーム */
+
+	fieldset
+		{
+		margin: 0;
+		padding: 0 1em;
+		border: 1px dotted #ccc;
+		}
+	legend
+		{
+		color: #333;
+		}
+
+	/* テキストボックス */
+	input
+		{
+		margin: 0.2em 0;
+		}
+	input[type="text"]
+		{
+		border: 1px dotted #ccc;
+		background-color: #eee;
+		color: #333;
+		}
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	input[type="image"]
+		{
+		cursor: pointer;
+		}
+	textarea
+		{
+		margin: 0.2em 0;
+		border: 1px dotted #ccc;
+		background-color: #eee;
+		color: #333;
+		}
+	select
+		{
+		margin: 0.2em 0;
+		}
+
+	/* ボタン */
+	button
+		{
+		cursor: pointer;
+		}
+
+/* ********************************************** */
+/* テーブル */
+
+	table
+		{
+		border-collapse: collapse;
+		border: 2px solid #ccc;
+		}
+	caption
+		{
+		text-align: center;
+		}
+	th
+		{
+		padding: 5px;
+		border: 1px solid #999;
+		background-color: #333;
+		color: #ccc;
+		font-weight: normal;
+		}
+	td
+		{
+		padding: 5px;
+		border: 1px solid #999;
+		background-color: #eee;
+		}
+
+/* ********************************************** */
+/* レイアウト */
+
+	div#PAGETOP hr
+		{
+		display: none;
+		}
+
+	div#HEADER
+		{
+		padding: 0.5em 5% 1.8em;
+		background-color: #333;
+		background-repeat: no-repeat;
+		background-position: right top;
+		}
+	ul#PAN
+		{
+		display: inline;
+		margin: 0;
+		}
+	ul#PAN li
+		{
+		display: inline;
+		list-style-type: none;
+		margin: 0;
+		padding-left: 9px;
+		background: url(/image/twig/pan.gif) no-repeat left center;
+		color: #999;
+		}
+		ul#PAN > li:first-child
+			{
+			padding: 0;
+			background: none;
+			}
+	ul#PAN li a:link,
+	ul#PAN li a:visited
+		{
+		color: #999;
+		}
+	ul#PAN li a:hover,
+	ul#PAN li a:active,
+	ul#PAN li a:focus
+		{
+		color: #966;
+		}
+
+	div#MENU
+		{
+		margin: -1.8em 0 2em 40%;
+		background: #ddd url(/image/twig/menu.gif) no-repeat left bottom;
+		}
+	div#MENU h2
+		{
+		margin: 0;
+		padding-left: 10px;
+		background: #111 url(/image/twig/corner_t.gif) no-repeat left top;
+		color: #999;
+		font-size: medium;
+		line-height: 1.8em;
+		}
+	div#MENU ul
+		{
+		margin: 0;
+		}
+	div#MENU ul li
+		{
+		display: inline;
+		list-style-type: none;
+		margin-left: 10px;
+		line-height: 1.8em;
+		}
+	div#MENU li.menu-on a:link,
+	div#MENU li.menu-on a:visited,
+	div#MENU li.menu-on a:hover,
+	div#MENU li.menu-on a:active,
+	div#MENU li.menu-on a:focus
+		{
+		color:#666;
+		}
+
+	div#KIZI h2
+		{
+		padding-left: 5%;
+		background-repeat: no-repeat;
+		background-position: left center;
+		}
+	div.text
+		{
+		margin: 0 auto 2em;
+		}
+	ul.modori
+		{
+		margin: 0;
+		}
+	ul.modori li
+		{
+		list-style-type: none;
+		margin: 0;
+		text-align: right;
+		}
+
+	div#FOOTER
+		{
+		padding: 0 0 0.5em 40%;
+		background-color: #333;
+		}
+	div#FOOTER h2
+		{
+		margin: 0 0 0.8em;
+		padding-left: 10px;
+		background: #111 url(/image/twig/corner_b.gif) no-repeat left bottom;
+		color: #999;
+		font-size: medium;
+		line-height: 1.8em;
+		}
+	div#FOOTER ul
+		{
+		margin: 0;
+		}
+	div#FOOTER ul li
+		{
+		color: #999;
+		}
+	div#FOOTER ul li a:link,
+	div#FOOTER ul li a:visited
+		{
+		color: #999;
+		}
+	div#FOOTER ul li a:hover,
+	div#FOOTER ul li a:active,
+	div#FOOTER ul li a:focus
+		{
+		color: #966;
+		}
+
+}
