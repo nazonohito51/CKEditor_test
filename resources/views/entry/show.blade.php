@@ -13,7 +13,7 @@
             console.log( evt.data.type, evt.data.errorCode, evt.data.additionalData );
         } );
         CKEDITOR.inline('editor1', {
-            customConfig: '/js/ckeditor/config.js?var=1.0'
+            customConfig: '/js/ckeditor/config.js'
         });
         function postEntry(entryId, entryBody) {
             $('#postEntryButton').val('保存中...');
