@@ -45,14 +45,15 @@ class EntryRepository implements EntryRepositoryInterface
      */
     public function find($id)
     {
-        $cacheKey = "entry:{$id}";
-        if ($this->cache->has($cacheKey)) {
-            return $this->cache->get($cacheKey);
-        }
+//        $cacheKey = "entry:{$id}";
+//        if ($this->cache->has($cacheKey)) {
+//            return $this->cache->get($cacheKey);
+//        }
+//        $result = $this->eloquent->find($id);
+//        if ($result) {
+//            $this->cache->put($cacheKey, $result);
+//        }
         $result = $this->eloquent->find($id);
-        if ($result) {
-            $this->cache->put($cacheKey, $result);
-        }
 
         return $result;
     }
