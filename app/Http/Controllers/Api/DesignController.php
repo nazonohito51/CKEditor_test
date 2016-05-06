@@ -16,10 +16,10 @@ class DesignController extends Controller
      */
     public function update($id, Request $request)
     {
-        $input = $request->only(['css']);
+        $input = $request->only(['design_css']);
 
-        $design = Design::find($id);
-        $design->css = $input['css'];
+        $design = Design::where('user_id', $id)->first();
+        $design->css = $input['design_css'];
         if ($design->save()) {
             //return \Response::json(['status'=>'OK'],'200');
             return response(['status' => 'OK'], Response::HTTP_CREATED);

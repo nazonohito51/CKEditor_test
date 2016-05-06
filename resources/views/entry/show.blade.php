@@ -34,9 +34,28 @@
             })
         }
         function changeDesign() {
-            design = $('#changeDesignSelect option:selected').val();
-            design_url = '/css/' + design;
+            design_css = $('#changeDesignSelect option:selected').val();
+            design_url = '/css/' + design_css;
             $('#design_css').attr('href', design_url);
+        }
+        function postDesign(userId) {
+            design_css = $('#changeDesignSelect option:selected').val();
+            $('#postDesignButton').val('保存中...');
+            $.ajax({
+                url: '/api/design/' + userId,
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'design_css': design_css
+                },
+                timeout: 5000,
+                success: function(data) {
+                    $('#postDesignButton').val('保存完了');
+                },
+                error: function() {
+                    $('#postDesignButton').val('保存に失敗しました');
+                }
+            })
         }
     </script>
 @stop
@@ -69,6 +88,7 @@
                             <option value="{{{ $value }}}">{{{ $key }}}</option>
                         @endforeach
                     </select>
+                    <input type="button" class="form-control" id="postDesignButton" name="test" value="デザインを変更する" onclick="postDesign({{{ $entry->user_id }}})">
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
