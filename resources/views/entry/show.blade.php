@@ -3,6 +3,7 @@
 @section('scripts')
     <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
     <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
+    <script src="/js/jquery/jquery.simple-sidebar.min.js"></script>
     <script>
         CKEDITOR.disableAutoInline = true;
         CKEDITOR.plugins.addExternal( 'uploadimage', '/js/ckeditor/plugins/uploadimage/', 'plugin.js' );
