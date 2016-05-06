@@ -15,6 +15,24 @@
         CKEDITOR.inline('editor1', {
             customConfig: '/js/ckeditor/config.js'
         });
+        function postEntry(entryId, entryBody) {
+            $('#postEntryButton').val('保存中...');
+            $.ajax({
+                url: '/api/entry/' + entryId,
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'body': entryBody
+                },
+                timeout: 5000,
+                success: function(data) {
+                    $('#postEntryButton').val('保存完了');
+                },
+                error: function() {
+                    $('#postEntryButton').val('保存に失敗しました');
+                }
+            })
+        }
     </script>
 @stop
 
@@ -29,13 +47,14 @@
             <div class="blog-post">
                 <h2 class="blog-post-title">{{{ $entry->title }}}</h2>
                 <p class="blog-post-meta">{{{ $entry->created_at }}}</p>
-                <form method="POST" action="{{{ route('admin.entry.update', [$id]) }}}">
+                <form method="POST" action="{{{ route('admin.entry.update', ['id' => $id]) }}}">
                     {!! csrf_field() !!}
+                    <input type="hidden" name="entry_id" value="{{{ $entry->id }}}">
                     <div id="editor1" contenteditable="true">
-                        <p>{!! nl2br(e($entry->body)) !!}</p>
+                        {!! $entry->body !!}
                     </div>
-                    <input type="button" class="form-control" id="test" name="test" value="test" onclick="window.alert(CKEDITOR.instances.editor1.getData())">
-                    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert($("form#entry input[name=\"_token\"]").get(0).value)'>
+                    <input type="button" class="form-control" id="postEntryButton" name="test" value="保存する" onclick="postEntry({{{ $entry->id }}}, CKEDITOR.instances.editor1.getData())">
+                    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert(CKEDITOR.instances.editor1.getData())'>
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
