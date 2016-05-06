@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Services\EntryService;
+use App\DataAccess\Eloquent\Design;
 
 class EntryController extends Controller
 {
@@ -46,6 +47,7 @@ class EntryController extends Controller
         $attributes = [
             'id' => $id,
             'entry' => $this->entry->getEntry($id),
+            'design' => Design::find(1),
             'comments' => $this->comment->getCommentsByEntry($id)
         ];
         return view('entry.show', $attributes);

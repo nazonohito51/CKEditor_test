@@ -36,6 +36,12 @@
     </script>
 @stop
 
+@section('styles')
+    @if (empty($design->css) === false)
+        <link href="/css/{{{ $design->css }}}" rel="stylesheet">
+    @endif
+@stop
+
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログ</h1>
