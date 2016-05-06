@@ -38,5 +38,6 @@ get('/', 'ApplicationController@index');
 \Route::resource('comment', 'CommentController', ['only' => ['store']]);
 \Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
     \Route::post('entry/{id}', 'EntryController@update');
+    \Route::post('design/{id}', 'DesignController@update');
     \Route::post('image', 'ImageController@create');
 });
