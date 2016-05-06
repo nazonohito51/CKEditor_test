@@ -11,13 +11,13 @@ class ImageController extends Controller
     {
         $image = $request->file('upload');
         $filename = date('YmdHis') . '.' . $image->getClientOriginalExtension();
-        $destination_path = '/home/vagrant/CKEditor_test/public/image';
+        $destination_path = '/home/vagrant/CKEditor_test/public/image/upload';
         $image->move($destination_path, $filename);
 
         $response = [
             'uploaded' => 1,
             'fileName' => $filename,
-            'url' => '/image/' . $filename,
+            'url' => '/image/upload/' . $filename,
             'error' => [
                 'message' => 'testtest this is test.'
             ]
