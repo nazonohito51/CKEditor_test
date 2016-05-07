@@ -1,0 +1,9 @@
+<div id='sidebar'>
+    <input type="button" class="form-control" id="postEntryButton" name="test" value="保存する" onclick="postEntry(1, CKEDITOR.instances.editor1.getData())">
+    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert(CKEDITOR.instances.editor1.getData())'>
+    <select id="changeDesignSelect" name="design" onchange="changeDesign()">
+        <option value="kirin/style.css">kirin</option>
+        <option value="sky/style.css">sky</option>
+    </select>
+    <input type="button" class="form-control" id="postDesignButton" name="test" value="デザインを変更する" onclick="postDesign(1)">
+</div>

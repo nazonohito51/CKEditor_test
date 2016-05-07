@@ -21,7 +21,7 @@
 <body>
 <!-- Navbar goes here -->
 @include('elements.entry.header')
-<div class="container">
+<div class="container" id="main">
     <div class="row">
         @yield('content')
     </div>

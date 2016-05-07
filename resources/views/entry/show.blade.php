@@ -58,6 +58,18 @@
                 }
             })
         }
+        $('#sidebar-wrapper').load('/html/sidebar.html', function() {
+            $('#sidebar').simpleSidebar({
+                wrapper: '#main',
+                opener: '#sidebarOpener',
+                sidebar: {
+                    align: 'left',
+                },
+                sbWrapper: {
+                    display: false
+                }
+            });
+        });
     </script>
 @stop
 
@@ -65,11 +77,14 @@
     <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
 @stop
 
+
+
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログ</h1>
         <p class="lead blog-description">Laravelリファレンス / サンプルアプリケーション</p>
     </div>
+    <div id="sidebar-wrapper"></div>
     <div class="row">
         <div class="col-sm-12 blog-main">
             {{--  ここからはブログ記事の表示です --}}
@@ -82,14 +97,7 @@
                     <div id="editor1" contenteditable="true">
                         {!! $entry->body !!}
                     </div>
-                    <input type="button" class="form-control" id="postEntryButton" name="test" value="保存する" onclick="postEntry({{{ $entry->id }}}, CKEDITOR.instances.editor1.getData())">
-                    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert(CKEDITOR.instances.editor1.getData())'>
-                    <select id="changeDesignSelect" name="design" onchange="changeDesign()">
-                        @foreach($designs as $key => $value)
-                            <option value="{{{ $value }}}">{{{ $key }}}</option>
-                        @endforeach
-                    </select>
-                    <input type="button" class="form-control" id="postDesignButton" name="test" value="デザインを変更する" onclick="postDesign({{{ $entry->user_id }}})">
+                    <input type="button" class="form-control" id="sidebarOpener" name="opener" value="サイドバー">
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
