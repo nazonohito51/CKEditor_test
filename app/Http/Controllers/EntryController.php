@@ -35,7 +35,10 @@ class EntryController extends Controller
         $result = $this->entry
             ->getPage($request->get('page', 1), 20)
             ->setPath($request->getBasePath());
-        return view('entry.index', ['page' => $result]);
+        return view('entry.index', [
+            'page' => $result,
+            'design' => Design::find(1),
+        ]);
     }
 
     /**
@@ -44,16 +47,10 @@ class EntryController extends Controller
      */
     public function show($id)
     {
-        $design_collection = [
-            'none' => '',
-            'kirin' => 'kirin/style.css',
-            'sky' => 'sky/style.css'
-        ];
         $attributes = [
             'id' => $id,
             'entry' => $this->entry->getEntry($id),
             'design' => Design::find(1),
-            'designs' => $design_collection,
             'comments' => $this->comment->getCommentsByEntry($id)
         ];
         return view('entry.show', $attributes);

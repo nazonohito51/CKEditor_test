@@ -1,11 +1,16 @@
 @extends('layouts.entry')
+
+@section('styles')
+    <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
+@stop
+
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログ</h1>
         <p class="lead blog-description">Laravelリファレンス / サンプルアプリケーション</p>
     </div>
     <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
             @forelse($page as $row)
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{{ $row->title }}}</h2>
@@ -22,6 +27,5 @@
                 {!! $page->render() !!}
             </nav>
         </div>
-        @include('elements.entry.sidebar')
     </div>
 @stop
