@@ -7,6 +7,7 @@
     <script>
         CKEDITOR.disableAutoInline = true;
         CKEDITOR.plugins.addExternal( 'uploadimage', '/js/ckeditor/plugins/uploadimage/', 'plugin.js' );
+        CKEDITOR.plugins.addExternal( 'oembed', '/js/ckeditor/plugins/oembed/', 'plugin.js' );
         CKEDITOR.on( 'log', function( evt ) {
             // Cancel default listener.
             evt.cancel();
