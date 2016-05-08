@@ -32,7 +32,6 @@
                     <div id="editor1" contenteditable="false">
                         {!! $entry->body !!}
                     </div>
-                    <input type="button" class="form-control" id="sidebarOpener" name="opener" value="サイドバー">
                 </form>
             </div>
             {{--  ここまでがブログ記事の表示です --}}
