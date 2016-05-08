@@ -19,7 +19,11 @@
 </head>
 <body>
 <!-- Navbar goes here -->
-@include('elements.blog.header')
+@if($admin === 1)
+    @include('elements.blog.admin_header')
+@else
+    @include('elements.blog.header')
+@endif
 <div class="container" id="main">
     @yield('styles')
     @yield('content')

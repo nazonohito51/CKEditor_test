@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CommentService;
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -36,6 +37,7 @@ class EntryController extends Controller
             ->getPage($request->get('page', 1), 20)
             ->setPath($request->getBasePath());
         return view('entry.index', [
+            'admin' => $request->session()->get('admin', 0),
             'page' => $result,
             'design' => Design::find(1),
         ]);
@@ -45,9 +47,10 @@ class EntryController extends Controller
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
         $attributes = [
+            'admin' => $request->session()->get('admin', 0),
             'id' => $id,
             'entry' => $this->entry->getEntry($id),
             'design' => Design::find(1),
