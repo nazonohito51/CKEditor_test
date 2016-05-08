@@ -42,15 +42,13 @@ function postEntry(entryId, entryBody) {
         }
     })
 }
-function changeDesign() {
-    design_css = $('#changeDesignSelect option:selected').val();
+function changeDesign(design_css) {
     design_url = '/css/' + design_css;
     design_html = '<!-- @import url(' + design_url + '); -->';
     $('#blog_design').html(design_html);
+    postDesign(1, design_css)
 }
-function postDesign(userId) {
-    design_css = $('#changeDesignSelect option:selected').val();
-    $('#postDesignButton').val('保存中...');
+function postDesign(userId, design_css) {
     $.ajax({
         url: '/api/design/' + userId,
         type: 'POST',
@@ -60,10 +58,10 @@ function postDesign(userId) {
         },
         timeout: 5000,
         success: function(data) {
-            $('#postDesignButton').val('保存完了');
+            BootstrapDialog.alert("保存完了しました。");
         },
         error: function() {
-            $('#postDesignButton').val('保存に失敗しました');
+            BootstrapDialog.alert("保存に失敗しました。");
         }
     })
 }

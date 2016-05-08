@@ -1,13 +1,47 @@
 <div id='sidebar'>
-    <input type="button" class="form-control" id="postEntryButton" name="test" value="保存する" onclick="postEntry(1, CKEDITOR.instances.editor1.getData())">
-    <input type="button" class="form-control" id="test" name="test2" value="test" onclick='window.alert(CKEDITOR.instances.editor1.getData())'>
-    <select id="changeDesignSelect" name="design" onchange="changeDesign()">
-        <option value="kirin/style.css">kirin</option>
-        <option value="sky/style.css">sky</option>
-        <option value="responsive1/style.css">responsive1</option>
-        <option value="responsive2/style.css">responsive2</option>
-        <option value="responsive3/style.css">responsive3</option>
-        <option value="responsive4/style.css">responsive4</option>
-    </select>
-    <input type="button" class="form-control" id="postDesignButton" name="test" value="デザインを変更する" onclick="postDesign(1)">
+    <div class="countainer">
+        </form>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <img src="/image/thumbnail/responsive4.png" width="200" onclick="changeDesign('responsive4/style.css')">
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-sm-12">-->
+                <!--<div class="thumbnail">-->
+                    <!--<img src="/image/thumbnail/responsive3.png" width="200" onclick="changeDesign('responsive3/style.css')">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-sm-12">-->
+                <!--<div class="thumbnail">-->
+                    <!--<img src="/image/thumbnail/responsive2.png" width="200" onclick="changeDesign('responsive2/style.css')">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <img src="/image/thumbnail/responsive1.png" width="200" onclick="changeDesign('responsive1/style.css')">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <img src="/image/thumbnail/kirin.png" width="200" onclick="changeDesign('kirin/style.css')">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <img src="/image/thumbnail/sky.png" width="200" onclick="changeDesign('sky/style.css')">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
