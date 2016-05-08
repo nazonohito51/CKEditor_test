@@ -1,12 +1,15 @@
 @extends('layouts.blog')
 
-@section('scripts')
-    <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
-    <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
-    <script src="/js/ckeditor/ckeditor.js"></script>
-    <script src="/js/jquery/jquery.simple-sidebar.min.js"></script>
-    <script src="/js/sidebar.js"></script>
-@stop
+@if($admin === 1)
+    @section('scripts')
+        <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
+        <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
+        <script src="/js/ckeditor/ckeditor.js"></script>
+        <script src="/js/jquery/jquery.simple-sidebar.min.js"></script>
+        <script src="/js/sidebar.js"></script>
+        <script src="/js/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    @stop
+@endif
 
 @section('styles')
     <style type="text/css" id="blog_design" scoped>
