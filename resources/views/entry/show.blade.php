@@ -1,4 +1,4 @@
-@extends('layouts.entry')
+@extends('layouts.blog')
 
 @section('scripts')
     <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>

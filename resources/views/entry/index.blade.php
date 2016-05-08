@@ -1,4 +1,4 @@
-@extends('layouts.entry')
+@extends('layouts.blog')
 
 @section('styles')
     <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
