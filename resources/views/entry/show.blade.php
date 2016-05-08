@@ -38,7 +38,8 @@
         function changeDesign() {
             design_css = $('#changeDesignSelect option:selected').val();
             design_url = '/css/' + design_css;
-            $('#design_css').attr('href', design_url);
+            design_html = '<!-- @import url(' + design_url + '); -->';
+            $('#blog_design').html(design_html);
         }
         function postDesign(userId) {
             design_css = $('#changeDesignSelect option:selected').val();
@@ -75,7 +76,9 @@
 @stop
 
 @section('styles')
-    <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
+    <style type="text/css" id="blog_design" scoped>
+        <!-- @import url(/css/{{{ $design->css }}});-->
+    </style>
 @stop
 
 
