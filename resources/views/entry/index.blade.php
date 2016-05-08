@@ -1,7 +1,9 @@
 @extends('layouts.blog')
 
 @section('styles')
-    <link id="design_css" href="/css/{{{ $design->css }}}" rel="stylesheet">
+    <style type="text/css" id="blog_design" scoped>
+        <!-- @import url(/css/{{{ $design->css }}});-->
+    </style>
 @stop
 
 @section('content')
@@ -23,9 +25,7 @@
             @empty
                 <p>ブログ記事がありません</p>
             @endforelse
-            <nav>
-                {!! $page->render() !!}
-            </nav>
+            {!! $page->render() !!}
         </div>
     </div>
 @stop
