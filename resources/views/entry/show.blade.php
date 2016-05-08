@@ -85,8 +85,8 @@
 
 @section('content')
     <div class="blog-header">
-        <h1 class="blog-title">ブログ</h1>
-        <p class="lead blog-description">Laravelリファレンス / サンプルアプリケーション</p>
+        <h1 class="blog-title">ブログタイトル</h1>
+        <p class="lead blog-description">ブログディスクリプション</p>
     </div>
     <div id="sidebar-wrapper"></div>
     <div class="row">
