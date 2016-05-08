@@ -21,10 +21,8 @@
 <!-- Navbar goes here -->
 @include('elements.entry.header')
 <div class="container" id="main">
-    <div class="row">
-        @yield('styles')
-        @yield('content')
-    </div>
+    @yield('styles')
+    @yield('content')
 </div>
 <script src="/js/jquery/jquery.min.js"></script>
 <script src="/js/bootstrap/bootstrap.min.js"></script>
