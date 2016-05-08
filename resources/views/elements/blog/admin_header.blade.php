@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top">
     <div class="container">
-        <a class="blog-nav-item nav navbar-nav navbar-left @if(Request::is('/'))active @endif" href="/entry">HOME</a>
+        <button type="button" id="editButton" class="blog-nav-item btn btn-default navbar-btn navbar-left" onclick='switchEditButton({{{ $entry->id }}})'>記事を編集する</button>
         <a class="blog-nav-item nav navbar-nav navbar-right btn btn-danger" href="/api/logout">LOGOUT</a>
     </div>
 </nav>

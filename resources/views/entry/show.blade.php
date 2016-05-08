@@ -14,9 +14,23 @@
             // Log event data.
             console.log( evt.data.type, evt.data.errorCode, evt.data.additionalData );
         } );
-        CKEDITOR.inline('editor1', {
-            customConfig: '/js/ckeditor/config.js'
-        });
+        function switchEditButton(entryId) {
+            var editMode = $('#editor1').attr('contenteditable');
+
+            if (editMode == 'true') {
+                postEntry(entryId, CKEDITOR.instances.editor1.getData());
+            } else {
+                editArticle();
+            }
+        }
+        function editArticle() {
+            $('#editor1').attr('contenteditable', true);
+            CKEDITOR.inline('editor1', {
+                customConfig: '/js/ckeditor/config.js',
+                startupFocus: true
+            });
+            $('#editButton').html('編集内容を保存する').removeClass('btn-default').addClass('btn-success');
+        }
         function postEntry(entryId, entryBody) {
             $('#postEntryButton').val('保存中...');
             $.ajax({
@@ -81,8 +95,6 @@
     </style>
 @stop
 
-
-
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログタイトル</h1>
@@ -98,7 +110,7 @@
                 <form method="POST" action="{{{ route('admin.entry.update', ['id' => $id]) }}}">
                     {!! csrf_field() !!}
                     <input type="hidden" name="entry_id" value="{{{ $entry->id }}}">
-                    <div id="editor1" contenteditable="true">
+                    <div id="editor1" contenteditable="false">
                         {!! $entry->body !!}
                     </div>
                     <input type="button" class="form-control" id="sidebarOpener" name="opener" value="サイドバー">
