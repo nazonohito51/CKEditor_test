@@ -14,6 +14,8 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         'api/image',
         'api/entry/*',
-        'api/design/*'
+        'api/design/*',
+        'api/login',
+        'api/logout'
     ];
 }

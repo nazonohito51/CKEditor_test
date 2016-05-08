@@ -37,6 +37,8 @@ get('/', 'ApplicationController@index');
 \Route::resource('entry', 'EntryController', ['only' => ['index', 'show']]);
 \Route::resource('comment', 'CommentController', ['only' => ['store']]);
 \Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
+    \Route::get('login', 'LoginController@login');
+    \Route::get('logout', 'LoginController@logout');
     \Route::post('entry/{id}', 'EntryController@update');
     \Route::post('design/{id}', 'DesignController@update');
     \Route::post('image', 'ImageController@create');
