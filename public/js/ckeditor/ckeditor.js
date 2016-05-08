@@ -35,10 +35,10 @@ function postEntry(entryId, entryBody) {
         },
         timeout: 5000,
         success: function(data) {
-            $('#postEntryButton').val('保存完了');
+            BootstrapDialog.alert("保存完了しました。");
         },
         error: function() {
-            $('#postEntryButton').val('保存に失敗しました');
+            BootstrapDialog.alert("保存に失敗しました。");
         }
     })
 }
