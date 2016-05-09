@@ -34,11 +34,12 @@ class EntryController extends Controller
      */
     public function index(Request $request)
     {
+        $admin = $request->session()->get('admin', 0);
         $result = $this->entry
-            ->getPage($request->get('page', 1), 20)
+            ->getPage($request->get('page', 1), 20, $admin)
             ->setPath($request->getBasePath());
         return view('entry.index', [
-            'admin' => $request->session()->get('admin', 0),
+            'admin' => $admin,
             'admin_function' => 'index',
             'page' => $result,
             'design' => Design::find(1),

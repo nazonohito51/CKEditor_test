@@ -79,13 +79,13 @@ class EntryRepository implements EntryRepositoryInterface
      *
      * @return \stdClass
      */
-    public function byPage($page = 1, $limit = 20)
+    public function byPage($page = 1, $limit = 20, $admin = 0)
     {
         $key = "entry_page:{$page}:{$limit}";
-        if ($this->cache->has($key)) {
-            return $this->cache->get($key);
-        }
-        $entries = $this->eloquent->byPage($limit, $page);
+//        if ($this->cache->has($key)) {
+//            return $this->cache->get($key);
+//        }
+        $entries = $this->eloquent->byPage($limit, $page, $admin);
 
         return $this->cache->putPaginateCache(
             $page,

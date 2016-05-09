@@ -20,9 +20,18 @@ class Entry extends Model
      *
      * @return mixed
      */
-    public function byPage($limit, $page)
+    public function byPage($limit, $page, $admin)
     {
+        if ($admin) {
+            return $this->query()
+                ->orderBy('created_at', 'desc')
+                ->skip($limit * ($page - 1))
+                ->take($limit)
+                ->get();
+        }
+
         return $this->query()
+            ->where('public', 1)
             ->orderBy('created_at', 'desc')
             ->skip($limit * ($page - 1))
             ->take($limit)

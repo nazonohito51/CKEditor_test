@@ -32,5 +32,5 @@ interface EntryRepositoryInterface
      *
      * @return mixed
      */
-    public function byPage($page = 1, $limit = 20);
+    public function byPage($page = 1, $limit = 20, $admin = 0);
 }

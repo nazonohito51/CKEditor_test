@@ -64,9 +64,9 @@ class EntryService
      * @param int $limit
      * @return LengthAwarePaginator
      */
-    public function getPage($page = 1, $limit = 20)
+    public function getPage($page = 1, $limit = 20, $admin = 0)
     {
-        $result = $this->entry->byPage($page, $limit);
+        $result = $this->entry->byPage($page, $limit, $admin);
         return new LengthAwarePaginator(
             $result->items, $result->total, $result->perPage, $result->currentPage
         );
