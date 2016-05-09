@@ -3,18 +3,14 @@
 @section('scripts')
     <script src="/js/bootstrap-dialog/bootstrap-dialog.min.js"></script>
     <script src="/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+    <script src="/js/jquery-ui/jquery-ui.min.js"></script>
     <script src="/js/display-switch.js"></script>
-    <script>
-        <!--
-
-        -->
-    </script>
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <ul class="list-group">
+            <ul id="sortable" class="list-group">
             @forelse($page as $row)
                 <li class="list-group-item">
                     {{{ $row->title }}}

@@ -25,3 +25,4 @@ $("[name='display-switch']").on('switchChange.bootstrapSwitch', function(event, 
         }
     })
 });
+$('#sortable').sortable();
