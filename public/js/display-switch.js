@@ -1,0 +1,1 @@
+$("[name='display-switch']").bootstrapSwitch();

@@ -9,7 +9,7 @@
     <title>@yield('title', config('blog.title', 'Blog'))</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-dialog/bootstrap-dialog.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-dialog/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-switch/bootstrap-switch.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="icon" href="/favicon.png">
