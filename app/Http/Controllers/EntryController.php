@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Services\EntryService;
 use App\DataAccess\Eloquent\Design;
+use App\DataAccess\Eloquent\Entry;
 
 class EntryController extends Controller
 {
@@ -39,6 +40,17 @@ class EntryController extends Controller
         return view('entry.index', [
             'admin' => $request->session()->get('admin', 0),
             'admin_function' => 'index',
+            'page' => $result,
+            'design' => Design::find(1),
+        ]);
+    }
+
+    public function edit_index(Request $request)
+    {
+        $result = Entry::all();
+        return view('entry.edit_index', [
+            'admin' => $request->session()->get('admin', 0),
+            'admin_function' => 'edit_index',
             'page' => $result,
             'design' => Design::find(1),
         ]);

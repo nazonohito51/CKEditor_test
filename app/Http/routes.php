@@ -34,6 +34,7 @@
 });
 
 get('/', 'ApplicationController@index');
+\Route::get('entry/edit_index', 'EntryController@edit_index');
 \Route::resource('entry', 'EntryController', ['only' => ['index', 'show']]);
 \Route::resource('comment', 'CommentController', ['only' => ['store']]);
 \Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
