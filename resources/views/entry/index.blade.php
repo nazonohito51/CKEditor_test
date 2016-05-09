@@ -4,7 +4,6 @@
     @section('scripts')
         <script src="/js/bootstrap-dialog/bootstrap-dialog.min.js"></script>
         <script src="/js/bootstrap-switch/bootstrap-switch.min.js"></script>
-        <script src="/js/display-switch.js"></script>
     @stop
 @endif
 
@@ -23,9 +22,6 @@
         <div class="col-sm-12 blog-main">
             @forelse($page as $row)
                 <div class="blog-post">
-                    @if($admin === 1)
-                        <input type="checkbox" class="pull-right" name="display-switch" checked>
-                    @endif
                     <h2 class="blog-post-title">{{{ $row->title }}}</h2>
                     <p class="blog-post-meta">{{{ $row->created_at }}}</p>
                     <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 30) }}}</p>
