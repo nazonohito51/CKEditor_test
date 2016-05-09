@@ -45,4 +45,22 @@ class EntryController extends Controller
             return response(['status' => 'NG'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
+
+    public function updateDisplay($id, Request $request)
+    {
+        $input = $request->only(['public']);
+        $input['user_id'] = 1;
+        $input['id'] = $id;
+
+        $entry = Entry::find($id);
+        $entry->public = $input['public'];
+
+        if ($entry->save()) {
+            //return \Response::json(['status'=>'OK'],'200');
+            return response(['status' => 'OK'], Response::HTTP_CREATED);
+        } else {
+            //return \Response::json(['status'=>'NG'],'500');
+            return response(['status' => 'NG'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
 }
