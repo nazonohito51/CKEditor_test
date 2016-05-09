@@ -38,6 +38,7 @@ class EntryController extends Controller
             ->setPath($request->getBasePath());
         return view('entry.index', [
             'admin' => $request->session()->get('admin', 0),
+            'admin_function' => 'index',
             'page' => $result,
             'design' => Design::find(1),
         ]);
@@ -51,6 +52,7 @@ class EntryController extends Controller
     {
         $attributes = [
             'admin' => $request->session()->get('admin', 0),
+            'admin_function' => 'show',
             'id' => $id,
             'entry' => $this->entry->getEntry($id),
             'design' => Design::find(1),

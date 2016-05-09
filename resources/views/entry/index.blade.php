@@ -1,5 +1,12 @@
 @extends('layouts.blog')
 
+@if($admin === 1)
+    @section('scripts')
+        <script src="/js/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+        <script src="/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+    @stop
+@endif
+
 @section('styles')
     <style type="text/css" id="blog_design" scoped>
         <!-- @import url(/css/{{{ $design->css }}});-->
@@ -9,12 +16,15 @@
 @section('content')
     <div class="blog-header">
         <h1 class="blog-title">ブログ</h1>
-        <p class="lead blog-description">Laravelリファレンス / サンプルアプリケーション</p>
+        <p class="lead blog-description">Laravelサンプルアプリケーション</p>
     </div>
     <div class="row">
         <div class="col-sm-12 blog-main">
             @forelse($page as $row)
                 <div class="blog-post">
+                    @if($admin === 1)
+                        <input type="checkbox" checked>
+                    @endif
                     <h2 class="blog-post-title">{{{ $row->title }}}</h2>
                     <p class="blog-post-meta">{{{ $row->created_at }}}</p>
                     <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 30) }}}</p>
