@@ -24,6 +24,7 @@ class Entry extends Model
     {
         if ($admin) {
             return $this->query()
+                ->orderBy('priority', 'asc')
                 ->orderBy('created_at', 'desc')
                 ->skip($limit * ($page - 1))
                 ->take($limit)
@@ -32,6 +33,7 @@ class Entry extends Model
 
         return $this->query()
             ->where('public', 1)
+            ->orderBy('priority', 'asc')
             ->orderBy('created_at', 'desc')
             ->skip($limit * ($page - 1))
             ->take($limit)

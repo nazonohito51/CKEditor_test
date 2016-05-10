@@ -4,6 +4,8 @@
     @section('scripts')
         <script src="/js/bootstrap-dialog/bootstrap-dialog.min.js"></script>
         <script src="/js/bootstrap-switch/bootstrap-switch.min.js"></script>
+        <script src="/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/js/display-switch.js"></script>
     @stop
 @endif
 
@@ -20,18 +22,20 @@
     </div>
     <div class="row">
         <div class="col-sm-12 blog-main">
+            <ul id="sortable" class="list-group">
             @forelse($page as $row)
-                <div class="blog-post">
-                    <h2 class="blog-post-title">{{{ $row->title }}}</h2>
-                    <p class="blog-post-meta">{{{ $row->created_at }}}</p>
-                    <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 30) }}}</p>
-                </div>
-                <div class="blog-post">
-                    <a href="{{{ route('entry.show', [$row->id]) }}}" class="btn btn-info">続きを読む</a>
-                </div>
+                <li id="sortable-entry" class="list-group-item">
+                    <div class="blog-post">
+                        <h2 class="blog-post-title">{{{ $row->title }}}</h2>
+                        <p class="blog-post-meta">{{{ $row->created_at }}}</p>
+                        <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 100) }}}</p>
+                        <a href="{{{ route('entry.show', [$row->id]) }}}" class="btn btn-info">続きを読む</a>
+                    </div>
+                </li>
             @empty
                 <p>ブログ記事がありません</p>
             @endforelse
+            </ul>
             {!! $page->render() !!}
         </div>
     </div>
