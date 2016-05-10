@@ -24,7 +24,7 @@
         <div class="col-sm-12 blog-main">
             <ul id="sortable" class="list-group">
             @forelse($page as $row)
-                <li id="sortable-entry" class="list-group-item">
+                <li id="sortable-entry" class="list-group-item" value="{{{ $row->id }}}">
                     <div class="blog-post">
                         <h2 class="blog-post-title">{{{ $row->title }}}</h2>
                         <p class="blog-post-meta">{{{ $row->created_at }}}</p>
