@@ -1,5 +1,10 @@
 <nav class="navbar navbar-fixed-top">
     <div class="container">
+        @if($admin_function == 'index')
+            <div class="btn-group">
+                <button type="button" id="sortButton" class="blog-nav-item btn btn-default navbar-btn navbar-left" onclick='sortEntry()'>記事を順番を変更する</button>
+            </div>
+        @endif
         @if($admin_function == 'show')
             <div class="btn-group">
                 <button type="button" id="editButton" class="blog-nav-item btn btn-default navbar-btn navbar-left" onclick='switchEditButton({{{ $entry->id }}})'>記事を編集する</button>

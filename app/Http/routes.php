@@ -40,6 +40,7 @@ get('/', 'ApplicationController@index');
 \Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
     \Route::get('login', 'LoginController@login');
     \Route::get('logout', 'LoginController@logout');
+    \Route::post('entry/priority/', 'EntryController@updatePriority');
     \Route::post('entry/{id}', 'EntryController@update');
     \Route::post('entry/public/{id}', 'EntryController@updateDisplay');
     \Route::post('design/{id}', 'DesignController@update');

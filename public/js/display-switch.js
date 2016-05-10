@@ -28,10 +28,23 @@ $("[name='display-switch']").on('switchChange.bootstrapSwitch', function(event, 
 $('#sortable').sortable();
 function sortEntry() {
     var ids = [];
-    window.alert($("#sortable li.list-group-item").length);
     $("#sortable li.list-group-item").each( function() {
-        window.alert($(this).val());
         ids.push($(this).val());
     })
-    window.alert(ids);
+
+    $.ajax({
+        url: '/api/entry/priority/',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            'ids[]': ids
+        },
+        timeout: 5000,
+        success: function(data) {
+            BootstrapDialog.alert("記事順番の変更に成功しました。");
+        },
+        error: function() {
+            BootstrapDialog.alert("記事順番の変更に失敗しました。");
+        }
+    })
 }

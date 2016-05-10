@@ -63,4 +63,21 @@ class EntryController extends Controller
             return response(['status' => 'NG'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
+
+    public function updatePriority(Request $request)
+    {
+        $input = $request->only(['ids']);
+
+        if (count($input['ids']) !== Entry::all()->count()) {
+            return response(['status' => 'NG'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        foreach ($input['ids'] as $key => $id) {
+            $entry = Entry::find($id);
+            $entry->priority = $key;
+            $entry->save();
+        }
+
+        return response(['status' => 'OK'], Response::HTTP_CREATED);
+    }
 }
