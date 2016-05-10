@@ -25,7 +25,10 @@
             <ul id="sortable" class="list-group">
             @forelse($page as $row)
                 <li class="list-group-item" value="{{{ $row->id }}}">
-                    <div class="blog-post">
+                    @if($admin === 1)
+                        <input type="checkbox" class="pull-right" name="display-switch" value="{{{ $row->id }}}" @if($row->public == 1)checked @endif>
+                    @endif
+                    <div class="blog-post" @if($row->public != 1)style="opacity: 0.6;"@endif>
                         <h2 class="blog-post-title">{{{ $row->title }}}</h2>
                         <p class="blog-post-meta">{{{ $row->created_at }}}</p>
                         <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 100) }}}</p>
