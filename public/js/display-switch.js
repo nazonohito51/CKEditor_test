@@ -16,6 +16,11 @@ $("[name='display-switch']").on('switchChange.bootstrapSwitch', function(event, 
         timeout: 5000,
         success: function(data) {
             BootstrapDialog.alert("公開状態の変更に成功しました。");
+            if (public == 1) {
+                $('#blog-post' + entryId).css('opacity', '1.0')
+            } else {
+                $('#blog-post' + entryId).css('opacity', '0.6')
+            }
         },
         error: function() {
             BootstrapDialog.alert("公開状態の変更に失敗しました。");
