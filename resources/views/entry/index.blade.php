@@ -22,9 +22,9 @@
     </div>
     <div class="row">
         <div class="col-sm-12 blog-main">
-            <ul id="sortable" class="list-group">
+            @if($admin === 1)<ul id="sortable" class="list-group">@endif
             @forelse($page as $row)
-                <li class="list-group-item" value="{{{ $row->id }}}">
+                @if($admin === 1)<li class="list-group-item" value="{{{ $row->id }}}">@endif
                     @if($admin === 1)
                         <input type="checkbox" class="pull-right" name="display-switch" value="{{{ $row->id }}}" @if($row->public == 1)checked @endif>
                     @endif
@@ -34,11 +34,11 @@
                         <p>{{{ mb_strimwidth(strip_tags($row->body), 0, 100) }}}</p>
                         <a href="{{{ route('entry.show', [$row->id]) }}}" class="btn btn-info">続きを読む</a>
                     </div>
-                </li>
+                @if($admin === 1)</li>@endif
             @empty
                 <p>ブログ記事がありません</p>
             @endforelse
-            </ul>
+            @if($admin === 1)</ul>@endif
             {!! $page->render() !!}
         </div>
     </div>
