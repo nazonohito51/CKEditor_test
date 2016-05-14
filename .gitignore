@@ -1,4 +1,3 @@
 vendor/
-.env
 .vagrant/
 public/image/upload/
