@@ -147,12 +147,6 @@ return [
         App\Providers\CaptchaServiceProvider::class,
         App\Providers\DriverServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
-
-        /*
-         * IDE Helper Providers...
-         */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
     ],
 
     /*
