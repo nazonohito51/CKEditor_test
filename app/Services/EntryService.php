@@ -68,7 +68,7 @@ class EntryService
     {
         $result = $this->entry->byPage($page, $limit, $admin);
         return new LengthAwarePaginator(
-            $result->items, $result->total, $result->perPage, $result->currentPage
+            $result, count($result), $limit, $page
         );
     }
 }
