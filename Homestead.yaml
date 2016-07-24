@@ -6,13 +6,13 @@ hostname: CKEditor-test
 name: CKEditor-test
 provider: virtualbox
 
-authorize: ~/.ssh/id_rsa.pub
+authorize: ~/.ssh/github_rsa.pub
 
 keys:
-    - ~/.ssh/id_rsa
+    - ~/.ssh/github_rsa
 
 folders:
-    - map: "/Users/usr0600375/Work/nazonohito51/CKEditor_test"
+    - map: "/Users/kawashima/Documents/git/nazonohito51/CKEditor_test"
       to: "/home/vagrant/CKEditor_test"
 
 sites:
