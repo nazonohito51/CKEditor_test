@@ -14,7 +14,8 @@ class FirstDataSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 1,
             'name' => 'test_user1',
-            'email' => '$2y$10$ChqZfhyBb/9co/afO7olleyw2XAY/9WM6AoNEBxBTs3P1jFw3JUnG',
+            'email' => 'test@test.com',
+            'password' => '$2y$10$ChqZfhyBb/9co/afO7olleyw2XAY/9WM6AoNEBxBTs3P1jFw3JUnG',
             'remember_token' => NULL,
         ]);
 
