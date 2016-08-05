@@ -43,7 +43,7 @@ class FirstDataSeeder extends Seeder
             ]
         ]);
 
-        DB::table('desings')->insert([
+        DB::table('designs')->insert([
             [
                 'user_id' => 1,
                 'css' => 'responsive4/style.css',
