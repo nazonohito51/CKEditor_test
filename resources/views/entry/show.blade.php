@@ -14,7 +14,7 @@
     @stop
 @endif
 
-@section('styles')
+@section('scoped_styles')
     <style type="text/css" id="blog_design" scoped>
         <!-- @import url(/css/{{{ $design->css }}});-->
     </style>

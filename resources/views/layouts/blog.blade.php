@@ -26,7 +26,7 @@
     @include('elements.blog.admin_header')
 @endif
 <div class="container" id="main">
-    @yield('styles')
+    @yield('scoped_styles')
     @yield('content')
 </div>
 <script src="/js/jquery/jquery.min.js"></script>
