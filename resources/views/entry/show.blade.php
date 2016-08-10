@@ -1,6 +1,10 @@
 @extends('layouts.blog')
 
 @if($admin === 1)
+    @section('styles')
+        <link href="{{ asset('dante-editor/css/dante-editor.css') }}" rel="stylesheet">
+    @stop
+
     @section('scripts')
         <script src="/js/jquery/jquery.simple-sidebar.min.js"></script>
         <script src="/js/sidebar.js"></script>
@@ -10,6 +14,21 @@
             <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
             <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
             <script src="/js/ckeditor/ckeditor.js"></script>
+        @elseif(config('editor.editor_type') == 'dante')
+            <script src="{{ asset('dante-editor/js/sanitize.js') }}"></script>
+            <script src="{{ asset('dante-editor/js/underscore.js') }}"></script>
+            <script src="{{ asset('dante-editor/js/dante-editor.js') }}"></script>
+            <script type="text/javascript">
+                editor = new Dante.Editor(
+                        {
+                            el: "#editor1",
+                            upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+                            store_url: "/save" //post to save
+
+                        }
+                );
+                editor.start()
+            </script>
         @endif
     @stop
 @endif

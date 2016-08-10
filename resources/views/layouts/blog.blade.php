@@ -11,6 +11,7 @@
     <link href="/css/bootstrap-dialog/bootstrap-dialog.min.css" rel="stylesheet">
     <link href="/css/bootstrap-switch/bootstrap-switch.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
+    @yield('styles')
     <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="icon" href="/favicon.png">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
