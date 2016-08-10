@@ -2,7 +2,11 @@
 
 @if($admin === 1)
     @section('styles')
-        <link href="{{ asset('dante-editor/css/dante-editor.css') }}" rel="stylesheet">
+        @if(config('editor.editor_type') == 'ckeditor5')
+            <link href="{{ asset('ckeditor5/ClassicEditor.css') }}" rel="stylesheet">
+        @elseif(config('editor.editor_type') == 'dante')
+            <link href="{{ asset('dante-editor/css/dante-editor.css') }}" rel="stylesheet">
+        @endif
     @stop
 
     @section('scripts')
@@ -14,6 +18,19 @@
             <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
             <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
             <script src="/js/ckeditor/ckeditor.js"></script>
+        @elseif(config('editor.editor_type') == 'ckeditor5')
+            <script src="{{ asset('ckeditor5/ClassicEditor.js') }}"></script>
+            <script>
+                ClassicEditor.create( document.getElementById( 'editor1' ), {
+                    toolbar: [ 'headings', 'bold', 'italic', 'undo', 'redo' ]
+                } )
+                .then( function( editor ) {
+                    window.editor = editor;
+                } )
+                .catch( function( err ) {
+                    console.error( err.stack );
+                } );
+            </script>
         @elseif(config('editor.editor_type') == 'dante')
             <script src="{{ asset('dante-editor/js/sanitize.js') }}"></script>
             <script src="{{ asset('dante-editor/js/underscore.js') }}"></script>
