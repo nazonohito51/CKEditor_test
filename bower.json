@@ -1,0 +1,22 @@
+{
+  "name": "CKEditor_test",
+  "description": "",
+  "main": "",
+  "authors": [
+    "kawashima <nazonohito51@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nazonohito51/CKEditor_test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dante": "^0.1.7",
+    "medium-editor": "^5.21.0"
+  }
+}

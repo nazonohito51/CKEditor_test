@@ -5,9 +5,9 @@
         @if(config('editor.editor_type') == 'ckeditor5')
             <link href="{{ asset('ckeditor5/ClassicEditor.css') }}" rel="stylesheet">
         @elseif(config('editor.editor_type') == 'dante')
-            <link href="{{ asset('dante-editor/css/dante-editor.css') }}" rel="stylesheet">
+            <link href="{{ asset('bower_components/dante/dist/css/dante-editor.css') }}" rel="stylesheet">
         @elseif(config('editor.editor_type') == 'medium')
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+            <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/medium-editor.min.css') }}" type="text/css" media="screen" charset="utf-8">
         @endif
     @stop
 
@@ -34,9 +34,9 @@
                 } );
             </script>
         @elseif(config('editor.editor_type') == 'dante')
-            <script src="{{ asset('dante-editor/js/sanitize.js') }}"></script>
-            <script src="{{ asset('dante-editor/js/underscore.js') }}"></script>
-            <script src="{{ asset('dante-editor/js/dante-editor.js') }}"></script>
+            <script src="{{ asset('bower_components/sanitize.js/lib/sanitize.js') }}"></script>
+            <script src="{{ asset('bower_components/underscore/underscore-min.js') }}"></script>
+            <script src="{{ asset('bower_components/dante/dist/js/dante-editor.js') }}"></script>
             <script type="text/javascript">
                 editor = new Dante.Editor(
                         {
@@ -49,8 +49,7 @@
                 editor.start()
             </script>
         @elseif(config('editor.editor_type') == 'medium')
-            <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
-            <script src="{{ asset('medium-editor/medium-editor-mobile-plugin.js') }}"></script>
+            <script src="{{ asset('bower_components/medium-editor/dist/js/medium-editor.min.js') }}"></script>
             <script>var editor = new MediumEditor('#editor1');</script>
         @endif
     @stop
