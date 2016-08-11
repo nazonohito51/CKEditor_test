@@ -51,6 +51,15 @@
         @elseif(config('editor.editor_type') == 'medium')
             <script src="{{ asset('bower_components/medium-editor/dist/js/medium-editor.min.js') }}"></script>
             <script>var editor = new MediumEditor('#editor1');</script>
+        @elseif(config('editor.editor_type') == 'wysihtml')
+            <script src="{{ asset('bower_components/wysihtml/dist/wysihtml-toolbar.min.js') }}"></script>
+            <script src="{{ asset('bower_components/wysihtml/parser_rules/advanced_and_extended.js') }}"></script>
+            <script>
+                var editor = new wysihtml5.Editor('editor1', {
+                    toolbar: 'toolbar',
+                    parserRules:  wysihtml5ParserRules
+                });
+            </script>
         @endif
     @stop
 @endif
@@ -76,6 +85,14 @@
                 <form method="POST" action="{{{ route('admin.entry.update', ['id' => $id]) }}}">
                     {!! csrf_field() !!}
                     <input type="hidden" name="entry_id" value="{{{ $entry->id }}}">
+                    @if($admin === 1 && config('editor.editor_type') == 'wysihtml')
+                        <div id="toolbar">
+                            <a data-wysihtml5-command="bold">bold</a>
+                            <a data-wysihtml5-command="italic">italic</a>
+                            <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+                            <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+                        </div>
+                    @endif
                     <div id="editor1" contenteditable="false">
                         {!! $entry->body !!}
                     </div>
