@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="@yield('description', config('blog.description'))">
     <meta name="keywords" content="@yield('keywords', config('blog.keywords'))"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', config('blog.title', 'Blog'))</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-dialog/bootstrap-dialog.min.css" rel="stylesheet">
