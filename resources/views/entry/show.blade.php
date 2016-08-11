@@ -6,6 +6,8 @@
             <link href="{{ asset('ckeditor5/ClassicEditor.css') }}" rel="stylesheet">
         @elseif(config('editor.editor_type') == 'dante')
             <link href="{{ asset('dante-editor/css/dante-editor.css') }}" rel="stylesheet">
+        @elseif(config('editor.editor_type') == 'medium')
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
         @endif
     @stop
 
@@ -46,6 +48,10 @@
                 );
                 editor.start()
             </script>
+        @elseif(config('editor.editor_type') == 'medium')
+            <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+            <script src="{{ asset('medium-editor/medium-editor-mobile-plugin.js') }}"></script>
+            <script>var editor = new MediumEditor('#editor1');</script>
         @endif
     @stop
 @endif
