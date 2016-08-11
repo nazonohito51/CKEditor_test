@@ -1,4 +1,5 @@
 vendor/
 .vagrant/
 public/image/upload/
+public/bower_components/
 node_modules/
