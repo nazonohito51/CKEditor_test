@@ -19,6 +19,7 @@
     "dante": "^0.1.7",
     "medium-editor": "^5.21.0",
     "wysihtml": "^0.5.5",
-    "trumbowyg": "^2.1.2"
+    "trumbowyg": "^2.1.2",
+    "ContentTools": "^1.2.10"
   }
 }

@@ -10,6 +10,8 @@
             <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/medium-editor.min.css') }}" type="text/css" media="screen" charset="utf-8">
         @elseif(config('editor.editor_type') == 'trumbowyg')
             <link rel="stylesheet" href="{{ asset('bower_components/trumbowyg/dist/ui/trumbowyg.min.css') }}">
+        @elseif(config('editor.editor_type') == 'content_tools')
+            <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/ContentTools/build/content-tools.min.css') }}">
         @endif
     @stop
 
@@ -66,6 +68,15 @@
             <script src="{{ asset('bower_components/trumbowyg/dist/trumbowyg.min.js') }}"></script>
             <script>
                 $('#editor1').trumbowyg();
+            </script>
+        @elseif(config('editor.editor_type') == 'content_tools')
+            <script src=" {{ asset('bower_components/ContentTools/build/content-tools.min.js') }}"></script>
+            <script>
+                window.addEventListener('load', function() {
+                    var editor;
+                    editor = ContentTools.EditorApp.get();
+                    editor.init('#editor1');
+                });
             </script>
         @endif
     @stop
