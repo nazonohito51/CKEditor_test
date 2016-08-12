@@ -12,6 +12,8 @@
             <link rel="stylesheet" href="{{ asset('bower_components/trumbowyg/dist/ui/trumbowyg.min.css') }}">
         @elseif(config('editor.editor_type') == 'content_tools')
             <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/ContentTools/build/content-tools.min.css') }}">
+        @elseif(config('editor.editor_type') == 'summernote')
+            <link href="{{ asset('bower_components/summernote/dist/summernote.css') }}" rel="stylesheet">
         @endif
     @stop
 
@@ -76,6 +78,15 @@
                     var editor;
                     editor = ContentTools.EditorApp.get();
                     editor.init('#editor1');
+                });
+            </script>
+        @elseif(config('editor.editor_type') == 'summernote')
+            <script src="{{ asset('bower_components/summernote/dist/summernote.min.js') }}"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#editor1').summernote({
+                        airMode: true
+                    });
                 });
             </script>
         @endif
