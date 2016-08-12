@@ -56,7 +56,7 @@
             </script>
         @elseif(config('editor.editor_type') == 'medium')
             <script src="{{ asset('bower_components/medium-editor/dist/js/medium-editor.min.js') }}"></script>
-            <script>var editor = new MediumEditor('#editor1');</script>
+            <script src="{{ asset('js/medium-editor/medium-editor.js') }}"></script>
         @elseif(config('editor.editor_type') == 'wysihtml')
             <script src="{{ asset('bower_components/wysihtml/dist/wysihtml-toolbar.min.js') }}"></script>
             <script src="{{ asset('bower_components/wysihtml/parser_rules/advanced_and_extended.js') }}"></script>
