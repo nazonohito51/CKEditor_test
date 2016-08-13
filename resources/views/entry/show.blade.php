@@ -8,6 +8,7 @@
             <link href="{{ asset('bower_components/dante/dist/css/dante-editor.css') }}" rel="stylesheet">
         @elseif(config('editor.editor_type') == 'medium')
             <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/medium-editor.min.css') }}" type="text/css" media="screen" charset="utf-8">
+            <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/themes/bootstrap.css') }}" type="text/css" media="screen" charset="utf-8">
         @elseif(config('editor.editor_type') == 'trumbowyg')
             <link rel="stylesheet" href="{{ asset('bower_components/trumbowyg/dist/ui/trumbowyg.min.css') }}">
         @elseif(config('editor.editor_type') == 'content_tools')
