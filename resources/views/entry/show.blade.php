@@ -9,6 +9,8 @@
         @elseif(config('editor.editor_type') == 'medium')
             <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/medium-editor.min.css') }}" type="text/css" media="screen" charset="utf-8">
             <link rel="stylesheet" href="{{ asset('bower_components/medium-editor/dist/css/themes/bootstrap.css') }}" type="text/css" media="screen" charset="utf-8">
+            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css') }}">
         @elseif(config('editor.editor_type') == 'trumbowyg')
             <link rel="stylesheet" href="{{ asset('bower_components/trumbowyg/dist/ui/trumbowyg.min.css') }}">
         @elseif(config('editor.editor_type') == 'content_tools')
@@ -57,6 +59,12 @@
             </script>
         @elseif(config('editor.editor_type') == 'medium')
             <script src="{{ asset('bower_components/medium-editor/dist/js/medium-editor.min.js') }}"></script>
+            <script src="{{ asset('bower_components/handlebars/handlebars.runtime.min.js') }}"></script>
+            <script src="{{ asset('bower_components/jquery-sortable/source/js/jquery-sortable-min.js') }}"></script>
+            <script src="{{ asset('bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
+            <script src="{{ asset('bower_components/blueimp-file-upload/js/jquery.iframe-transport.js') }}"></script>
+            <script src="{{ asset('bower_components/blueimp-file-upload/js/jquery.fileupload.js') }}"></script>
+            <script src="{{ asset('bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js') }}"></script>
             <script src="{{ asset('js/medium-editor/medium-editor.js') }}"></script>
         @elseif(config('editor.editor_type') == 'wysihtml')
             <script src="{{ asset('bower_components/wysihtml/dist/wysihtml-toolbar.min.js') }}"></script>

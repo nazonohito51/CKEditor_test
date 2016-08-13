@@ -21,6 +21,7 @@
     "wysihtml": "^0.5.5",
     "trumbowyg": "^2.1.2",
     "ContentTools": "^1.2.10",
-    "summernote": "^0.8.2"
+    "summernote": "^0.8.2",
+    "medium-editor-insert-plugin": "^2.4.0"
   }
 }
