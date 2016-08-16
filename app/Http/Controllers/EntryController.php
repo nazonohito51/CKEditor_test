@@ -61,6 +61,16 @@ class EntryController extends Controller
         ]);
     }
 
+    public function create(Request $request)
+    {
+        $attributes = [
+            'admin' => $request->session()->get('admin', 0),
+            'admin_function' => 'create',
+            'design' => Design::find(1),
+        ];
+        return view('entry.createz', $attributes);
+    }
+
     /**
      * @param $id
      * @return \Illuminate\View\View
