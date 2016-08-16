@@ -68,7 +68,7 @@ class EntryController extends Controller
             'admin_function' => 'create',
             'design' => Design::find(1),
         ];
-        return view('entry.createz', $attributes);
+        return view('entry.create', $attributes);
     }
 
     /**
