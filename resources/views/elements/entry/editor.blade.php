@@ -26,6 +26,11 @@
         <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
         <script src="//cdn.ckeditor.com/4.5.8/full-all/adapters/jquery.js"></script>
         <script src="/js/ckeditor/ckeditor.js"></script>
+        @if($admin_function == 'create')
+            <script type="text/javascript">
+                editArticle();
+            </script>
+        @endif
     @elseif(config('editor.editor_type') == 'ckeditor5')
         <script src="{{ asset('ckeditor5/ClassicEditor.js') }}"></script>
         <script>

@@ -31,7 +31,7 @@
                             <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
                         </div>
                     @endif
-                    <div id="editor1" contenteditable="false">
+                    <div id="editor1" placeholder="本文を入力してください" contenteditable="false">
                         {!! old('title') !!}
                     </div>
                 </form>

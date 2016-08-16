@@ -7,7 +7,7 @@
             </div>
         @elseif($admin_function == 'create')
             <div class="btn-group">
-                <button type="button" id="editButton" class="blog-nav-item btn btn-default navbar-btn navbar-left" onclick='switchEditButton({{{ $entry->id }}})'>記事を編集する</button>
+                <button type="button" id="createButton" class="blog-nav-item btn btn-success navbar-btn navbar-left" onclick='createButton()'>記事を保存する</button>
             </div>
         @elseif($admin_function == 'show')
             <div class="btn-group">
