@@ -46,6 +46,10 @@ class EntryController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit_index(Request $request)
     {
         $result = Entry::all();
