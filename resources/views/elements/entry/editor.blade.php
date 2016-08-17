@@ -14,6 +14,10 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/ContentTools/build/content-tools.min.css') }}">
     @elseif(config('editor.editor_type') == 'summernote')
         <link href="{{ asset('bower_components/summernote/dist/summernote.css') }}" rel="stylesheet">
+    @elseif(config('editor.editor_type') == 'froala')
+        <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bower_components/froala-editor/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bower_components/froala-editor/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     @endif
 @stop
 
@@ -98,6 +102,14 @@
                 $('#editor1').summernote({
                     airMode: true
                 });
+            });
+        </script>
+    @elseif(config('editor.editor_type' == 'froala'))
+        <script type="text/javascript" src="{{ asset('bower_components/froala-editor/js/froala_editor.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bower_components/froala-editor/js/languages/ja.js') }}"></script>
+        <script>
+            $(function() {
+                $('#editor1').froalaEditor()
             });
         </script>
     @endif
