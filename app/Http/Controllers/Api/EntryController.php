@@ -21,6 +21,26 @@ class EntryController extends Controller
         $this->entry = $entry;
     }
 
+    public function store(Request $request)
+    {
+        $input = $request->only(['body']);
+        $input['user_id'] = 1;
+
+        $entry = new Entry();
+        $entry->user_id = $input['user_id'];
+        $entry->title = 'title ' . date('Y-m-d H:i:s');
+        $entry->body = $input['body'];
+        $entry->public = 1;
+        $entry->priority = 1;
+
+        if ($entry->save()) {
+            return response(['status' => 'OK'], Response::HTTP_CREATED);
+        } else {
+            return response(['status' => 'NG'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
     /**
      * @param integer $id
      * @param Request $request

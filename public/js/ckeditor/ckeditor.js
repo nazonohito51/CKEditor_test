@@ -8,13 +8,13 @@ CKEDITOR.on( 'log', function( evt ) {
     console.log( evt.data.type, evt.data.errorCode, evt.data.additionalData );
 } );
 function createButton() {
-    postEntry(null, CKEDITOR.instances.editor1.getData());
+    createEntry(CKEDITOR.instances.editor1.getData());
 }
 function switchEditButton(entryId) {
     var editMode = $('#editor1').attr('contenteditable');
 
     if (editMode == 'true') {
-        postEntry(entryId, CKEDITOR.instances.editor1.getData());
+        updateEntry(entryId, CKEDITOR.instances.editor1.getData());
     } else {
         editArticle();
         $('#editButton').html('編集内容を保存する').removeClass('btn-default').addClass('btn-success');
@@ -26,13 +26,6 @@ function editArticle() {
         customConfig: '/js/ckeditor/config.js',
         startupFocus: true
     });
-}
-function postEntry(entryId, entryBody) {
-    if (entryId == null) {
-        createEntry();
-    } else {
-        updateEntry(entryId, entryBody);
-    }
 }
 function createEntry(entryBody) {
     $('#postEntryButton').val('保存中...');
