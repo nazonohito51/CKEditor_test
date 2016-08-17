@@ -1,6 +1,10 @@
 CKEDITOR.disableAutoInline = true;
 CKEDITOR.plugins.addExternal( 'uploadimage', '/js/ckeditor/plugins/uploadimage/', 'plugin.js' );
 CKEDITOR.plugins.addExternal( 'oembed', '/js/ckeditor/plugins/oembed/', 'plugin.js' );
+CKEDITOR.plugins.addExternal( 'youtube', '/js/ckeditor/plugins/youtube/', 'plugin.js' );
+CKEDITOR.plugins.addExternal( 'codemirror', '/js/ckeditor/plugins/codemirror/', 'plugin.js' );
+CKEDITOR.plugins.addExternal( 'confighelper', '/js/ckeditor/plugins/confighelper/', 'plugin.js' );
+
 CKEDITOR.on( 'log', function( evt ) {
     // Cancel default listener.
     evt.cancel();
@@ -22,8 +26,9 @@ function switchEditButton(entryId) {
 }
 function editArticle() {
     $('#editor1').attr('contenteditable', true);
+    CKEDITOR.disableAutoInline = true;
     CKEDITOR.inline('editor1', {
-        customConfig: '/js/ckeditor/config.js',
+        customConfig: '/js/ckeditor/config_test.js',
         startupFocus: true
     });
 }
