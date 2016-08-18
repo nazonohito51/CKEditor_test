@@ -33,7 +33,13 @@
     );
 });
 
-get('/', 'ApplicationController@index');
+\Route::get('/test', 'TestController@index');
+\Route::post('/test', [
+    'as' => 'test', 'uses' => 'TestController@update'
+]);
+get('/', [
+    'as' => 'home', 'uses' => 'ApplicationController@index'
+]);
 \Route::get('entry/edit_index', 'EntryController@edit_index');
 \Route::resource('entry', 'EntryController', ['only' => ['index', 'show', 'create']]);
 \Route::resource('comment', 'CommentController', ['only' => ['store']]);

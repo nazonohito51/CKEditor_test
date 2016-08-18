@@ -147,6 +147,7 @@ return [
         App\Providers\CaptchaServiceProvider::class,
         App\Providers\DriverServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+        App\Providers\ValidatorServiceProvider::class,
     ],
 
     /*
