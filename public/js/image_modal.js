@@ -1,3 +1,6 @@
+var image_modal = $('[data-remodal-id=modal]').remodal();
+var images = {};
+
 $(document).on('opening', '.remodal', function () {
     console.log('Modal is opening');
     console.log('getting images...');
@@ -9,6 +12,7 @@ $(document).on('opening', '.remodal', function () {
         timeout: 5000,
         success: function(data) {
             console.log(data);
+            images = data.images;
         },
         error: function() {
             console.alert('failed get images');
@@ -19,6 +23,7 @@ $(document).on('opening', '.remodal', function () {
 
 $(document).on('opened', '.remodal', function () {
     console.log('Modal is opened');
+    console.log(images);
 });
 
 $(document).on('closing', '.remodal', function (e) {

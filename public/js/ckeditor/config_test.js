@@ -22,7 +22,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.extraPlugins = 'tableresize,lineutils,sourcedialog';
 
     // 外部プラグインを追加（実体は/manage/ckeditor/$version_num/plugins/で定義）
-    config.extraPlugins += ',youtube,uploadimage,image2';
+    config.extraPlugins += ',youtube,uploadimage,image2,my_image';
 
     // 外部プラグインを追加（ブラウザのバージョンごとに対応してるプラグインのみを追加）
     config.extraPlugins += ''
@@ -85,7 +85,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'tools', items: [ 'Maximize' ] },
         '/',
         { name: 'links', items: [ 'Link', 'Unlink' ] },
-        { name: 'others', items: [ 'jugem_picto', 'jugem_image', 'jugem_review', 'instagram', 'petaguru', 'Youtube' ] },
+        { name: 'others', items: [ 'my_image', 'Youtube' ] },
         { name: 'insert', items: [ 'Table', 'HorizontalRule' ] },
         { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ], items: [ 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'CreateDiv', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
         { name: 'document',    groups: [ 'mode' ], items: [ 'Sourcedialog' ] },

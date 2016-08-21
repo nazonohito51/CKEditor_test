@@ -4,6 +4,7 @@ CKEDITOR.plugins.addExternal( 'oembed', '/js/ckeditor/plugins/oembed/', 'plugin.
 CKEDITOR.plugins.addExternal( 'youtube', '/js/ckeditor/plugins/youtube/', 'plugin.js' );
 CKEDITOR.plugins.addExternal( 'codemirror', '/js/ckeditor/plugins/codemirror/', 'plugin.js' );
 CKEDITOR.plugins.addExternal( 'confighelper', '/js/ckeditor/plugins/confighelper/', 'plugin.js' );
+CKEDITOR.plugins.addExternal( 'my_image', '/js/ckeditor/plugins/my_image/', 'plugin.js' );
 
 CKEDITOR.on( 'log', function( evt ) {
     // Cancel default listener.
