@@ -120,6 +120,7 @@
 
     {{-- remodal --}}
     <script src="{{ asset('bower_components/remodal/dist/remodal.min.js') }}"></script>
+    <script src="{{ asset('js/image_modal.js') }}"></script>
     <div class="remodal" data-remodal-id="modal">
         <button data-remodal-action="close" class="remodal-close"></button>
         <h1>Remodal</h1>
