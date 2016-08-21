@@ -14,6 +14,7 @@ $(document).on('opening', '.remodal', function () {
             console.log(data);
             images = data.images;
             var container = $('#images-container');
+            container.empty();
             images.forEach(function(image) {
                 container.append(newImageElement(image.url, image.name));
             });
@@ -50,6 +51,14 @@ $(document).on('cancellation', '.remodal', function () {
 function newImageElement(url, name) {
     return $('<img />', {
         src: url,
-        alt: name
+        alt: name,
+        on: {
+            click: function(event) {
+                var item = '<img src="' + url + '" alt="' + name + '" />';
+                var element = CKEDITOR.dom.element.createFromHtml(item);
+                CKEDITOR.instances.editor1.insertElement(element);
+                image_modal.close();
+            }
+        }
     });
 }
