@@ -23,7 +23,7 @@ class ImageController extends Controller
                 ],
                 [
                     'name' => 'third',
-                    'url' => asset('image/upload/20160812092705.png'),
+                    'url' => asset('image/upload/20160812092705.jpeg'),
                 ]
             ],
         ];

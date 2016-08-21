@@ -13,17 +13,20 @@ $(document).on('opening', '.remodal', function () {
         success: function(data) {
             console.log(data);
             images = data.images;
+            var container = $('#images-container');
+            images.forEach(function(image) {
+                container.append(newImageElement(image.url, image.name));
+            });
         },
         error: function() {
             console.alert('failed get images');
         }
-    })
+    });
     console.log('getting images done.')
 });
 
 $(document).on('opened', '.remodal', function () {
     console.log('Modal is opened');
-    console.log(images);
 });
 
 $(document).on('closing', '.remodal', function (e) {
@@ -43,3 +46,10 @@ $(document).on('confirmation', '.remodal', function () {
 $(document).on('cancellation', '.remodal', function () {
     console.log('Cancel button is clicked');
 });
+
+function newImageElement(url, name) {
+    return $('<img />', {
+        src: url,
+        alt: name
+    });
+}

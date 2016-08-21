@@ -126,6 +126,7 @@
             Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
         </p>
         <br>
+        <div id="images-container"></div>
         <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
         <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
     </div>
