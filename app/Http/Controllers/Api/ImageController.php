@@ -3,57 +3,64 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\DataAccess\Eloquent\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
     public function index()
     {
+        $images = Image::where('user_id', 1)->get();
         $response = [
             'succeded' => 1,
-            'count' => 3,
-            'images' => [
-                [
-                    'name' => 'first',
-                    'url' => asset('image/upload/20160618092803.png'),
-                ],
-                [
-                    'name' => 'second',
-                    'url' => asset('image/upload/20160618092810.png'),
-                ],
-                [
-                    'name' => 'third',
-                    'url' => asset('image/upload/20160812092705.jpeg'),
-                ]
-            ],
+            'count' => $images->count(),
+            'images' => $this->imagesToResponse($images),
         ];
 
         return json_encode($response);
     }
 
+    private function imagesToResponse($images)
+    {
+        $ret = [];
+        foreach ($images as $image) {
+            array_push($ret, [
+                'name' => $image->name,
+                'url' => asset("image/upload/{$image->filename}"),
+            ]);
+        }
+
+        return $ret;
+    }
+
     public function create(Request $request)
     {
-        $image = $request->file('upload');
-        $filename = date('YmdHis') . '.' . $image->getClientOriginalExtension();
+        $upload_image = $request->file('upload');
+        $filename = date('YmdHis') . '.' . $upload_image->getClientOriginalExtension();
         $destination_path = '/home/vagrant/CKEditor_test/public/image/upload';
-        $image->move($destination_path, $filename);
+        $upload_image->move($destination_path, $filename);
 
-        $response = [
-            'uploaded' => 1,
-            'fileName' => $filename,
-            'url' => '/image/upload/' . $filename,
-            'error' => [
-                'message' => 'testtest this is test.'
-            ]
-        ];
-//        $response = [
-//            'uploaded' => 0,
-//            'error' => [
-//                'message' => 'testtest this is test.'
-//            ]
-//        ];
-        \Log::error($response);
+        $image = new Image();
+        $image->user_id = 1;
+        $image->name = $upload_image->getClientOriginalName();
+        $image->filename = $filename;
 
-        return json_encode($response);
+        if ($image->save()) {
+            return json_encode([
+                'uploaded' => 1,
+                'fileName' => $filename,
+                'url' => '/image/upload/' . $filename,
+                'error' => [
+                    'message' => 'testtest this is test.'
+                ]
+            ]);
+        } else {
+            return json_encode([
+                'uploaded' => 0,
+                'error' => [
+                    'message' => 'testtest this is test.'
+                ]
+            ]);
+        }
     }
 }
