@@ -23,6 +23,7 @@
     {{-- remodal --}}
     <link rel="stylesheet" href="{{ asset('bower_components/remodal/dist/remodal.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/remodal/dist/remodal-default-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/image_modal.css') }}">
 @stop
 
 @section('scripts')
@@ -121,14 +122,11 @@
     {{-- remodal --}}
     <div class="remodal" data-remodal-id="modal">
         <button data-remodal-action="close" class="remodal-close"></button>
-        <h1>Remodal</h1>
-        <p>
-            Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
-        </p>
+        <h1>画像の選択</h1>
         <br>
         <div id="images-container"></div>
-        <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-        <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+        <hr />
+        <button data-remodal-action="cancel" class="remodal-cancel">閉じる</button>
     </div>
     <script src="{{ asset('bower_components/remodal/dist/remodal.min.js') }}"></script>
     <script src="{{ asset('js/image_modal.js') }}"></script>

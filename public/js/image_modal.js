@@ -52,6 +52,7 @@ function newImageElement(url, name) {
     return $('<img />', {
         src: url,
         alt: name,
+        addClass: "remodal-img",
         on: {
             click: function(event) {
                 var item = '<img src="' + url + '" alt="' + name + '" />';
