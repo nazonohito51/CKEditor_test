@@ -7,6 +7,30 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+    public function index()
+    {
+        $response = [
+            'succeded' => 1,
+            'count' => 3,
+            'images' => [
+                [
+                    'name' => 'first',
+                    'url' => asset('image/upload/20160618092803.png'),
+                ],
+                [
+                    'name' => 'second',
+                    'url' => asset('image/upload/20160618092810.png'),
+                ],
+                [
+                    'name' => 'third',
+                    'url' => asset('image/upload/20160812092705.png'),
+                ]
+            ],
+        ];
+
+        return json_encode($response);
+    }
+
     public function create(Request $request)
     {
         $image = $request->file('upload');

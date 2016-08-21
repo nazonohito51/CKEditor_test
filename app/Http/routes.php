@@ -45,5 +45,6 @@ get('/', 'ApplicationController@index');
     \Route::post('entry/{id}', 'EntryController@update');
     \Route::post('entry/public/{id}', 'EntryController@updateDisplay');
     \Route::post('design/{id}', 'DesignController@update');
+    \Route::get('image', 'ImageController@index');
     \Route::post('image', 'ImageController@create');
 });
