@@ -19,6 +19,10 @@
         <link href="{{ asset('bower_components/froala-editor/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bower_components/froala-editor/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     @endif
+
+    {{-- remodal --}}
+    <link rel="stylesheet" href="{{ asset('bower_components/remodal/dist/remodal.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/remodal/dist/remodal-default-theme.css') }}">
 @stop
 
 @section('scripts')
@@ -113,4 +117,17 @@
             });
         </script>
     @endif
+
+    {{-- remodal --}}
+    <script src="{{ asset('bower_components/remodal/dist/remodal.min.js') }}"></script>
+    <div class="remodal" data-remodal-id="modal">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <h1>Remodal</h1>
+        <p>
+            Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+        </p>
+        <br>
+        <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+        <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
 @stop

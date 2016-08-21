@@ -23,6 +23,7 @@
     "ContentTools": "^1.2.10",
     "summernote": "^0.8.2",
     "medium-editor-insert-plugin": "^2.4.0",
-    "froala-editor": "*"
+    "froala-editor": "*",
+    "remodal": "^1.1.0"
   }
 }
