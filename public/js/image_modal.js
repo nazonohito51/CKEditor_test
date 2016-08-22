@@ -49,17 +49,31 @@ $(document).on('cancellation', '.remodal', function () {
 });
 
 function newImageElement(url, name) {
-    return $('<img />', {
-        src: url,
-        alt: name,
+    var style_url = "url('" + url + "')";
+    return $('<span></span>', {
+        css: {'background-image':style_url},
         addClass: "remodal-img",
         on: {
             click: function(event) {
                 var item = '<img src="' + url + '" alt="' + name + '" />';
                 var element = CKEDITOR.dom.element.createFromHtml(item);
                 CKEDITOR.instances.editor1.insertElement(element);
+                CKEDITOR.instances.editor1.widgets.initOn(element, 'image');
                 image_modal.close();
             }
         }
     });
+    // return $('<img />', {
+    //     src: url,
+    //     alt: name,
+    //     addClass: "remodal-img",
+    //     on: {
+    //         click: function(event) {
+    //             var item = '<img src="' + url + '" alt="' + name + '" />';
+    //             var element = CKEDITOR.dom.element.createFromHtml(item);
+    //             CKEDITOR.instances.editor1.insertElement(element);
+    //             image_modal.close();
+    //         }
+    //     }
+    // });
 }
