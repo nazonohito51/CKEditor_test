@@ -43,10 +43,11 @@ class UploadAssets extends Command
                 'region'  => 'us-east-1'
             ]);
             $upload_dir_path = public_path('cdn');
-            $result = $s3_client->getObject([
-                'Bucket' => 'my-bucket',
-                'Key'    => 'my-key'
-            ]);
+            $s3_client->uploadDirectory(
+                $upload_dir_path,
+                'my-bucket',
+                'portal'
+            );
         } catch (\Aws\S3\Exception\S3Exception $e) {
             $this->error('Assets upload is failed.');
             $this->error('S3 message:');
