@@ -42,6 +42,7 @@ class UploadAssets extends Command
                 'version' => 'latest',
                 'region'  => 'us-east-1'
             ]);
+            $upload_dir_path = public_path('cdn');
             $result = $s3_client->getObject([
                 'Bucket' => 'my-bucket',
                 'Key'    => 'my-key'
