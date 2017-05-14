@@ -40,6 +40,7 @@
 
 @section('side_menu')
     <h2>menu</h2>
+
 @endsection
 
 @section('scripts')
@@ -56,47 +57,36 @@
             slideout.toggle();
         });
     </script>
+
+    <script>
+        var preview_window;
+        window.addEventListener( 'load', function () {
+            preview_window = document.getElementById('preview_window');
+        }, false );
+
+        function changeSmartPhonePreview() {
+            // iPhone6 Plus
+            preview_window.setAttribute('width', 414);
+            preview_window.setAttribute('height', 736);
+        }
+        function changeTabletPreview() {
+            // iPad4
+            preview_window.setAttribute('width', 768);
+            preview_window.setAttribute('height', 1024);
+        }
+        function changePcPreview() {
+            // Mac Air
+            preview_window.setAttribute('width', 1440);
+            preview_window.setAttribute('height', 900);
+        }
+    </script>
 @endsection
 
 @section('content')
     <header>
         <button class="toggle-button">☰</button>
-        <h1>ブログエントリ</h1>
+        <h1>プレビューテスト</h1>
     </header>
-    <div>
-        <a href="{{{ route('admin.entry.create') }}}" class="btn btn-primary">ブログを投稿する</a>
-    </div>
-    @if(session('message'))
-        <div class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span>
-            {{{ session('message') }}}
-        </div>
-    @endif
-    <table class="table">
-        <tr>
-            <th>タイトル</th>
-            <th>本文</th>
-            <th></th>
-        </tr>
-        @forelse($page as $row)
-            <tr>
-                <td>{{{ $row->title }}}</td>
-                <td>{{{ mb_strimwidth(strip_tags($row->body), 0, 30, "...") }}}</td>
-                <td><a href="{{{ route('admin.entry.edit', [$row->id]) }}}">編集</a></td>
-            </tr>
-        @empty
-            <tr>
-                <td colspan="3">ブログ記事がありません</td>
-            </tr>
-        @endforelse
-    </table>
-    {!! $page->render() !!}
 
-    {{-- iPhone6 Plus --}}
-    <iframe src="/admin/entry" sandbox="allow-scripts" width="414" height="736"></iframe>
-    {{-- iPad4 --}}
-    {{--<iframe src="/admin/entry" sandbox="allow-scripts" width="768" height="1024"></iframe>--}}
-    {{-- Mac Air --}}
-    {{--<iframe src="/admin/entry" sandbox="allow-scripts" width="1440" height="900"></iframe>--}}
+    <iframe id="preview_window" src="/admin/entry" sandbox="allow-scripts" width="414" height="736"></iframe>
 @stop
