@@ -21,7 +21,6 @@
             @yield('content')
         </div>
     </div>
-    @include('elements.admin.footer')
 </main>
 
 @yield('scripts')

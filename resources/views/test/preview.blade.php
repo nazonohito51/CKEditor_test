@@ -92,4 +92,11 @@
         @endforelse
     </table>
     {!! $page->render() !!}
+
+    {{-- iPhone6 Plus --}}
+    <iframe src="/admin/entry" sandbox="allow-scripts" width="414" height="736"></iframe>
+    {{-- iPad4 --}}
+    {{--<iframe src="/admin/entry" sandbox="allow-scripts" width="768" height="1024"></iframe>--}}
+    {{-- Mac Air --}}
+    {{--<iframe src="/admin/entry" sandbox="allow-scripts" width="1440" height="900"></iframe>--}}
 @stop
