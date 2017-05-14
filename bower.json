@@ -24,6 +24,7 @@
     "summernote": "^0.8.2",
     "medium-editor-insert-plugin": "^2.4.0",
     "froala-editor": "*",
-    "remodal": "^1.1.0"
+    "remodal": "^1.1.0",
+    "slideout.js": "^1.0.1"
   }
 }
