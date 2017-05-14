@@ -36,11 +36,37 @@
             display: block;
         }
     </style>
+
+    <style type="text/css">
+        .blog-preview {
+            transition: all 300ms 0s ease;
+        }
+
+        /*iPhone6 Plus*/
+        .blog-preview__smartphone {
+            width: 414px;
+            height: 736px;
+        }
+        /*iPad4*/
+        .blog-preview__tablet {
+            width: 768px;
+            height: 1024px;
+        }
+        /*Mac Air*/
+        .blog-preview__pc {
+            width: 1440px;
+            height: 900px;
+        }
+    </style>
 @endsection
 
 @section('side_menu')
     <h2>menu</h2>
-
+    <ul>
+        <li><button onclick="changeSmartPhonePreview();">スマホ版</button></li>
+        <li><button onclick="changeTabletPreview();">タブレット版</button></li>
+        <li><button onclick="changePcPreview();">PC版</button></li>
+    </ul>
 @endsection
 
 @section('scripts')
@@ -65,19 +91,29 @@
         }, false );
 
         function changeSmartPhonePreview() {
-            // iPhone6 Plus
-            preview_window.setAttribute('width', 414);
-            preview_window.setAttribute('height', 736);
+            preview_window.classList.add('blog-preview__smartphne');
+            preview_window.classList.remove('blog-preview__tablet');
+            preview_window.classList.remove('blog-preview__pc');
+
+            reloadPreview();
         }
         function changeTabletPreview() {
-            // iPad4
-            preview_window.setAttribute('width', 768);
-            preview_window.setAttribute('height', 1024);
+            preview_window.classList.remove('blog-preview__smartphne');
+            preview_window.classList.add('blog-preview__tablet');
+            preview_window.classList.remove('blog-preview__pc');
+
+            reloadPreview();
         }
         function changePcPreview() {
-            // Mac Air
-            preview_window.setAttribute('width', 1440);
-            preview_window.setAttribute('height', 900);
+            preview_window.classList.remove('blog-preview__smartphne');
+            preview_window.classList.remove('blog-preview__tablet');
+            preview_window.classList.add('blog-preview__pc');
+
+            reloadPreview();
+        }
+
+        function reloadPreview() {
+            preview_window.contentWindow.location.reload();
         }
     </script>
 @endsection
@@ -88,5 +124,5 @@
         <h1>プレビューテスト</h1>
     </header>
 
-    <iframe id="preview_window" src="/admin/entry" sandbox="allow-scripts" width="414" height="736"></iframe>
+    <iframe id="preview_window" src="/admin/entry" sandbox="allow-same-origin" class="blog-preview blog-preview__smartphone"></iframe>
 @stop
