@@ -48,3 +48,7 @@ get('/', 'ApplicationController@index');
     \Route::get('image', 'ImageController@index');
     \Route::post('image', 'ImageController@create');
 });
+
+\Route::group(['namespace' => 'Test', 'prefix' => 'test'], function () {
+    \Route::get('preview', 'TestController@preview');
+});
