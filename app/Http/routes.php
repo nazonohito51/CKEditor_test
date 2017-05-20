@@ -51,4 +51,5 @@ get('/', 'ApplicationController@index');
 
 \Route::group(['namespace' => 'Test', 'prefix' => 'test'], function () {
     \Route::get('preview', 'TestController@preview');
+    \Route::get('blog', 'TestController@blog');
 });

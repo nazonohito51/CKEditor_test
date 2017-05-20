@@ -22,4 +22,9 @@ class TestController extends Controller
             ->setPath($request->getBasePath());
         return view('test.preview', ['page' => $result]);
     }
+
+    public function blog()
+    {
+        return view('test.blog');
+    }
 }

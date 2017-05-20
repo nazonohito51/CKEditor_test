@@ -91,21 +91,21 @@
         }, false );
 
         function changeSmartPhonePreview() {
-            preview_window.classList.add('blog-preview__smartphne');
+            preview_window.classList.add('blog-preview__smartphone');
             preview_window.classList.remove('blog-preview__tablet');
             preview_window.classList.remove('blog-preview__pc');
 
             reloadPreview();
         }
         function changeTabletPreview() {
-            preview_window.classList.remove('blog-preview__smartphne');
+            preview_window.classList.remove('blog-preview__smartphone');
             preview_window.classList.add('blog-preview__tablet');
             preview_window.classList.remove('blog-preview__pc');
 
             reloadPreview();
         }
         function changePcPreview() {
-            preview_window.classList.remove('blog-preview__smartphne');
+            preview_window.classList.remove('blog-preview__smartphone');
             preview_window.classList.remove('blog-preview__tablet');
             preview_window.classList.add('blog-preview__pc');
 
@@ -124,5 +124,5 @@
         <h1>プレビューテスト</h1>
     </header>
 
-    <iframe id="preview_window" src="/admin/entry" sandbox="allow-same-origin" class="blog-preview blog-preview__smartphone"></iframe>
+    <iframe id="preview_window" src="/test/blog" sandbox="allow-same-origin" class="blog-preview blog-preview__pc"></iframe>
 @stop
